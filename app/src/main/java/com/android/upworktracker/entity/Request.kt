@@ -1,4 +1,4 @@
-package com.android.upworktracker
+package com.android.upworktracker.entity
 
 
 import com.google.gson.annotations.SerializedName

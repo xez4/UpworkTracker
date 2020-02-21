@@ -3,6 +3,8 @@ package com.android.upworktracker
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import com.android.upworktracker.entity.Request
+import com.android.upworktracker.entity.Response
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
