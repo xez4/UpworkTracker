@@ -20,6 +20,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         someResponse()
+        initIntroActivity()
+    }
+
+    private fun initIntroActivity(){
+        Intro()
     }
 
     private fun serviceRetrofit() = Retrofit.Builder()
