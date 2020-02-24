@@ -7,8 +7,8 @@ import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.ForegroundColorSpan
 import android.widget.TextView
-import com.android.upworktracker.MainActivity
 import com.android.upworktracker.R
+import com.android.upworktracker.adverts.AdvertActivity
 import kotlinx.android.synthetic.main.activity_intro.*
 import moxy.MvpAppCompatActivity
 import moxy.presenter.InjectPresenter
@@ -47,7 +47,7 @@ class IntroActivity : MvpAppCompatActivity(), IntroView {
     }
 
     override fun finishActivity() {
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(this, AdvertActivity::class.java))
         finish()
     }
 }

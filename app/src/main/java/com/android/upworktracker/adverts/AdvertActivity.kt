@@ -1,5 +1,7 @@
 package com.android.upworktracker.adverts
 
+import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
@@ -7,7 +9,8 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.upworktracker.R
-import kotlinx.android.synthetic.main.activity_main.*
+import com.android.upworktracker.intro.IntroActivity
+import kotlinx.android.synthetic.main.activity_advert.*
 import moxy.MvpAppCompatActivity
 import moxy.presenter.InjectPresenter
 import moxy.presenter.ProvidePresenter
@@ -29,9 +32,21 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
             window.statusBarColor = Color.BLACK
         }
 
-        setContentView(R.layout.activity_main)
+        isFirstRun()
+
+        setContentView(R.layout.activity_advert)
         setToolbar()
         refresh()
+    }
+
+    fun isFirstRun() {
+        val isFirstRun =
+            getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE).getBoolean("isFirstRun", true)
+        if (isFirstRun) {
+            startActivity(Intent(this, IntroActivity::class.java))
+        }
+        getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE).edit()
+            .putBoolean("isFirstRun", false).apply()
     }
 
     override fun refresh() {

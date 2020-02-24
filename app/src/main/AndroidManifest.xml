@@ -12,12 +12,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".UpworkTracker"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".adverts.AdvertActivity">
         <activity android:name=".intro.IntroActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".adverts.AdvertActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
