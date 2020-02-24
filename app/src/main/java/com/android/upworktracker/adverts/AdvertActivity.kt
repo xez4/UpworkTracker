@@ -1,6 +1,7 @@
 package com.android.upworktracker.adverts
 
 import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -24,9 +25,9 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
-
-        //    window.statusBarColor = Color.BLACK
+        if (Build.VERSION.SDK_INT < 23) {
+            window.statusBarColor = Color.BLACK
+        }
 
         setContentView(R.layout.activity_main)
         setToolbar()
@@ -58,8 +59,3 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
     }
 
 }
-
-
-
-
-
