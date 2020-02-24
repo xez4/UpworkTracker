@@ -52,13 +52,17 @@ dependencies {
     implementation "org.koin:koin-core-ext:$koin_version"
     implementation "org.koin:koin-androidx-scope:$koin_version"
     implementation "org.koin:koin-androidx-ext:$koin_version"
+    // Page indicator
+    implementation 'com.romandanylyk:pageindicatorview:1.0.3'
+    // Material Components
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    // Lottie animation
+    implementation 'com.airbnb.android:lottie:3.3.1'
     // Moxy
     def moxyVersion = "2.0.2"
     implementation "com.github.moxy-community:moxy:$moxyVersion"
     implementation "com.github.moxy-community:moxy-android:$moxyVersion"
     implementation "com.github.moxy-community:moxy-androidx:$moxyVersion"
     kapt "com.github.moxy-community:moxy-compiler:$moxyVersion"
-    //debug
-    debugImplementation "com.squareup.leakcanary:leakcanary-android:2.2"
-
 }

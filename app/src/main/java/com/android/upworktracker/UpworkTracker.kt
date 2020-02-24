@@ -5,6 +5,7 @@ import com.android.upworktracker.adverts.advertsModule
 import com.android.upworktracker.di.networkModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
+import com.android.upworktracker.intro.introModule
 
 class UpworkTracker : Application() {
     override fun onCreate() {
@@ -12,7 +13,7 @@ class UpworkTracker : Application() {
 
         startKoin {
             androidContext(this@UpworkTracker)
-            modules(listOf(advertsModule, networkModule))
+            modules(listOf(introModule, advertsModule, networkModule))
         }
     }
 }
