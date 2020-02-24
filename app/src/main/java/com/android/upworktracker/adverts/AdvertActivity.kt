@@ -55,7 +55,7 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
 
     override fun setToolbar() {
         setSupportActionBar(toolbar)
-        title = " "
+        title = ""
     }
 
     override fun initAdapter(advertAdapter: AdvertAdapter) {
@@ -72,5 +72,4 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
         advertPresenter.notifyOptionsItemSelected(item.itemId)
         return true
     }
-
 }

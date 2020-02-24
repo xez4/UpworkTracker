@@ -9,7 +9,7 @@ import com.android.upworktracker.R
 import com.android.upworktracker.intro.IntroActivity
 import kotlinx.android.synthetic.main.fragment_second_intro.*
 
-class SecondIntroFragment : Fragment() {
+class SecondIntroFragment : BaseFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -18,8 +18,4 @@ class SecondIntroFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_second_intro, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        IntroActivity().decorateTextView(secondFragmentHeaderTextView)
-    }
 }

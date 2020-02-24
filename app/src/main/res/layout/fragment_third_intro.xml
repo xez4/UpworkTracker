@@ -8,7 +8,7 @@
     tools:context=".intro.fragments.FirstIntroFragment">
 
     <TextView
-        android:id="@+id/thirdFragmentHeaderTextView"
+        android:id="@+id/fragmentHeaderTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="8dp"
-        android:src="@drawable/ic_placeholder_300_200" />
+        android:src="@drawable/third_fragment_picture" />
 
     <TextView
         android:layout_width="wrap_content"

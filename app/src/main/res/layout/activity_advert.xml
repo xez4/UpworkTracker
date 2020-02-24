@@ -33,7 +33,6 @@
                 android:layout_marginTop="34dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="24dp"
                 android:text="@string/upwork_tracker"
                 android:textColor="@color/lima"
                 android:textSize="36sp"

@@ -36,14 +36,7 @@ class IntroActivity : MvpAppCompatActivity(), IntroView {
     }
 
     override fun decorateTextView(headerTextView: TextView) {
-        val multiColoredHeader = SpannableString(headerTextView.text)
-        multiColoredHeader.setSpan(
-            ForegroundColorSpan(Color.GREEN),
-            0,
-            2,
-            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
-        )
-        headerTextView.text = multiColoredHeader
+
     }
 
     override fun finishActivity() {

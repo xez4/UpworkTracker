@@ -10,7 +10,7 @@ import com.android.upworktracker.R
 import com.android.upworktracker.intro.IntroActivity
 import kotlinx.android.synthetic.main.fragment_third_intro.*
 
-class ThirdIntroFragment : Fragment() {
+class ThirdIntroFragment : BaseFragment() {
 
     lateinit var ribbon: LottieAnimationView
 
@@ -25,8 +25,6 @@ class ThirdIntroFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         ribbon = activity?.findViewById(R.id.ribbonLottieAnimationView) as LottieAnimationView
-
-        IntroActivity().decorateTextView(thirdFragmentHeaderTextView)
     }
 
     override fun onResume() {
