@@ -34,6 +34,7 @@ class ThirdIntroFragment : BaseFragment() {
                 this.setAnimation(R.raw.lottie_ribbon_animation)
                 this.playAnimation()
                 this.repeatCount = 0
+                this.speed = 0.5f
             }
         }
     }

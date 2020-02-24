@@ -1,5 +1,6 @@
 package com.android.upworktracker.intro
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
@@ -35,12 +36,10 @@ class IntroActivity : MvpAppCompatActivity(), IntroView {
         }
     }
 
-    override fun decorateTextView(headerTextView: TextView) {
-
-    }
-
     override fun finishActivity() {
         startActivity(Intent(this, AdvertActivity::class.java))
         finish()
+        getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE).edit()
+            .putBoolean("isFirstRun", false).apply()
     }
 }

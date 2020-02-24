@@ -45,8 +45,6 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
         if (isFirstRun) {
             startActivity(Intent(this, IntroActivity::class.java))
         }
-        getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE).edit()
-            .putBoolean("isFirstRun", false).apply()
     }
 
     override fun refresh() {

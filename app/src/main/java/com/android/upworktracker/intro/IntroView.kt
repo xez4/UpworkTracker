@@ -8,5 +8,4 @@ import moxy.viewstate.strategy.StateStrategyType
 @StateStrategyType(AddToEndSingleStrategy::class)
 interface IntroView : MvpView {
     fun finishActivity()
-    fun decorateTextView(headerTextView: TextView)
 }
