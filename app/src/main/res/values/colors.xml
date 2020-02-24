@@ -3,4 +3,6 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="lima">#76BD17</color>
+    <color name="greyNickel">#C3C3BD</color>
 </resources>

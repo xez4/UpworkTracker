@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">UpworkTracker</string>
+    <string name="next_page_button">Next</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="first_fragment_title">Check for jobs in bed, on the run or anywhere else - easy!</string>
+    <string name="first_fragment_description">Still checking for freelancer jobs only when sitting in front of a computer?</string>
+    <string name="second_fragment_title">Never miss an opportunity</string>
+    <string name="second_fragment_description">Set filters and get notified first about new projects for you.</string>
+    <string name="third_fragment_title">Get more done with Upwork Tracker</string>
+    <string name="third_fragment_description">Tracker lets you choose what job categories, budget, locations, keywords you want to see.</string>
+    <string name="welcome_header">Welcome to</string>
+    <string name="upwork_tracker_header">Upwork Tracker</string>
 </resources>
