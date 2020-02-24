@@ -3,29 +3,29 @@ package com.android.upworktracker.entity
 
 import com.google.gson.annotations.SerializedName
 
-data class Request(
+data class TrackerRequest(
     @SerializedName("api_params")
-    val apiParams: String="",
+    val apiParams: String = "",
     @SerializedName("budget")
-    val budget: String="",
+    val budget: String = "",
     @SerializedName("client_hires")
-    val clientHires: String="",
+    val clientHires: String = "",
     @SerializedName("contractor_tier")
-    val contractorTier: String="",
+    val contractorTier: String = "",
     @SerializedName("duration_v3")
-    val durationV3: String="",
+    val durationV3: String = "",
     @SerializedName("job_type")
-    val jobType: String="",
+    val jobType: String = "",
     @SerializedName("paging")
-    val paging: String="0%3B10",
+    val paging: String = "0%3B100",
     @SerializedName("proposals")
-    val proposals: String="",
+    val proposals: String = "",
     @SerializedName("q")
-    val q: String="",
+    val q: String = "",
     @SerializedName("sort")
-    val sort: String="",
+    val sort: String = "",
     @SerializedName("verified_payment_only")
-    val verifiedPaymentOnly: String="",
+    val verifiedPaymentOnly: String = "",
     @SerializedName("workload")
-    val workload: String=""
+    val workload: String = ""
 )

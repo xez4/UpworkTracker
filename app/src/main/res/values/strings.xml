@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">UpworkTracker</string>
+    <string name="refresh">refresh</string>
+    <string name="upwork_tracker">Upwork Tracker</string>
+    <string name="title_card">PANAMA (Spanish) male VO to record TV spot</string>
+    <string name="category_card">Voice talent</string>
+    <string name="date_card">12:53</string>
+    <string name="description_card">Hi,we are lookink for a native male PANAMA(SPANISH) VO to record on TV sssssssssssssssssssssssssssssssssppppppppppppppppppppppppppppppppppppp</string>
+    <string name="budget_card">$200</string>
+    <string name="country_card">Spain</string>
+    <string name="tag">very good</string>
 </resources>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/advertsCard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="14dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/titleAdvertText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:text="@string/title_card"
+            android:textColor="@color/lima"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/categoryAdvertText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/category_card"
+            android:layout_margin="8dp"
+            app:layout_constraintStart_toStartOf="@id/titleAdvertText"
+            app:layout_constraintTop_toBottomOf="@id/titleAdvertText"
+            app:layout_constraintBottom_toTopOf="@id/descriptionAdvertText"/>
+
+        <TextView
+            android:id="@+id/uploadDataText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:text="@string/date_card"
+            android:textColor="@color/silver"
+            app:layout_constraintBottom_toBottomOf="@+id/categoryAdvertText"
+            app:layout_constraintStart_toEndOf="@id/categoryAdvertText"
+            app:layout_constraintTop_toBottomOf="@id/titleAdvertText"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/descriptionAdvertText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="3"
+            android:paddingEnd="8dp"
+            android:paddingStart="8dp"
+            android:text="@string/description_card"
+            android:textColor="@color/silver"
+            app:layout_constraintStart_toStartOf="@+id/categoryAdvertText"
+            app:layout_constraintTop_toBottomOf="@id/categoryAdvertText" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerTags"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:overScrollMode="never"
+            app:layout_constraintStart_toStartOf="@id/descriptionAdvertText"
+            app:layout_constraintTop_toBottomOf="@id/descriptionAdvertText"
+            tools:listitem="@layout/tag_advert" />
+
+        <TextView
+            android:id="@+id/costAdvertText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+
+            android:textColor="@color/lima"
+            android:textSize="22sp"
+            app:layout_constraintStart_toStartOf="@id/recyclerTags"
+            app:layout_constraintTop_toBottomOf="@id/recyclerTags" />
+
+        <TextView
+            android:id="@+id/countryAdvertText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="14dp"
+            android:text="@string/country_card"
+            android:textColor="@color/silver"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/costAdvertText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
