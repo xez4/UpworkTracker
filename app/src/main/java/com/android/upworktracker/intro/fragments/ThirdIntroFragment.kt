@@ -1,18 +1,19 @@
 package com.android.upworktracker.intro.fragments
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.airbnb.lottie.LottieAnimationView
 import com.android.upworktracker.R
-import com.android.upworktracker.intro.IntroActivity
-import kotlinx.android.synthetic.main.fragment_third_intro.*
+import nl.dionsegijn.konfetti.KonfettiView
+import nl.dionsegijn.konfetti.ParticleSystem
+import nl.dionsegijn.konfetti.models.Shape
+import nl.dionsegijn.konfetti.models.Size
 
 class ThirdIntroFragment : BaseFragment() {
 
-    lateinit var ribbon: LottieAnimationView
+    lateinit var ribbon: KonfettiView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,18 +25,21 @@ class ThirdIntroFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        ribbon = activity?.findViewById(R.id.ribbonLottieAnimationView) as LottieAnimationView
+        ribbon = activity?.findViewById(R.id.confettiView) as KonfettiView
+
     }
 
     override fun onResume() {
         super.onResume()
-        with(ribbon) {
-            if (!this.isAnimating) {
-                this.setAnimation(R.raw.lottie_ribbon_animation)
-                this.playAnimation()
-                this.repeatCount = 0
-                this.speed = 0.5f
-            }
-        }
+        ribbon.build()
+            .addColors(Color.YELLOW, Color.GREEN, Color.MAGENTA)
+            .setDirection(0.0, 359.0)
+            .setSpeed(1f, 5f)
+            .setFadeOutEnabled(true)
+            .setTimeToLive(2000L)
+            .addShapes(Shape.RECT, Shape.CIRCLE)
+            .addSizes(Size(12))
+            .setPosition(-50f, ribbon.width + 50f, -50f, -50f)
+            .streamFor(300, 5000L)
     }
 }

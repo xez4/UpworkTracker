@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -8,10 +7,11 @@
     android:layout_margin="16dp"
     tools:context=".intro.fragments.FirstIntroFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/welcomeHeaderTextView"
@@ -22,11 +22,7 @@
             android:text="@string/welcome_header"
             android:textAlignment="center"
             android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/fragmentHeaderTextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/fragmentHeaderTextView"
@@ -37,11 +33,7 @@
             android:text="@string/upwork_tracker_header"
             android:textAlignment="center"
             android:textSize="36sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/fragmentPictureImageView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/welcomeHeaderTextView" />
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/fragmentPictureImageView"
@@ -49,11 +41,7 @@
             android:layout_height="200dp"
             android:layout_gravity="center_horizontal"
             android:layout_margin="8dp"
-            android:src="@drawable/first_fragment_picture"
-            app:layout_constraintBottom_toTopOf="@id/fragmentTitleTextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fragmentHeaderTextView" />
+            android:src="@drawable/first_fragment_picture" />
 
         <TextView
             android:id="@+id/fragmentTitleTextView"
@@ -64,11 +52,7 @@
             android:text="@string/first_fragment_title"
             android:textAlignment="center"
             android:textSize="24sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@id/fragmentDescriptionTextView"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fragmentPictureImageView" />
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/fragmentDescriptionTextView"
@@ -78,12 +62,8 @@
             android:layout_margin="8dp"
             android:text="@string/first_fragment_description"
             android:textAlignment="center"
-            android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/fragmentTitleTextView" />
+            android:textSize="20sp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 
 </FrameLayout>
