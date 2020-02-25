@@ -15,11 +15,11 @@
 
         <TextView
             android:id="@+id/titleAdvertText"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="4dp"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
             android:text="@string/title_card"
             android:textColor="@color/lima"
             android:textSize="22sp"
@@ -30,17 +30,17 @@
             android:id="@+id/categoryAdvertText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
             android:text="@string/category_card"
-            android:layout_margin="8dp"
-            app:layout_constraintStart_toStartOf="@id/titleAdvertText"
-            app:layout_constraintTop_toBottomOf="@id/titleAdvertText"
-            app:layout_constraintBottom_toTopOf="@id/descriptionAdvertText"/>
+            app:layout_constraintBottom_toTopOf="@id/descriptionAdvertText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleAdvertText" />
 
         <TextView
             android:id="@+id/uploadDataText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="8dp"
+            android:layout_marginStart="12dp"
             android:text="@string/date_card"
             android:textColor="@color/silver"
             app:layout_constraintBottom_toBottomOf="@+id/categoryAdvertText"
@@ -50,14 +50,14 @@
 
         <TextView
             android:id="@+id/descriptionAdvertText"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:maxLines="3"
-            android:paddingEnd="8dp"
-            android:paddingStart="8dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="8dp"
             android:text="@string/description_card"
             android:textColor="@color/silver"
-            app:layout_constraintStart_toStartOf="@+id/categoryAdvertText"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/categoryAdvertText" />
 
 
@@ -65,9 +65,9 @@
             android:id="@+id/recyclerTags"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginStart="12dp"
             android:overScrollMode="never"
-            app:layout_constraintStart_toStartOf="@id/descriptionAdvertText"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/descriptionAdvertText"
             tools:listitem="@layout/tag_advert" />
 
@@ -75,11 +75,10 @@
             android:id="@+id/costAdvertText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-
+            android:layout_marginStart="12dp"
             android:textColor="@color/lima"
             android:textSize="22sp"
-            app:layout_constraintStart_toStartOf="@id/recyclerTags"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/recyclerTags" />
 
         <TextView
@@ -87,7 +86,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:layout_marginStart="14dp"
+            android:layout_marginStart="12dp"
             android:text="@string/country_card"
             android:textColor="@color/silver"
             app:layout_constraintBottom_toBottomOf="parent"
