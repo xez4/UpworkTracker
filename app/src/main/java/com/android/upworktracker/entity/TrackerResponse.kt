@@ -1,6 +1,5 @@
 package com.android.upworktracker.entity
 
-
 import com.google.gson.annotations.SerializedName
 
 data class TrackerResponse(
@@ -14,10 +13,6 @@ data class TrackerResponse(
     val date: String,
     @SerializedName("description")
     val description: String,
-    @SerializedName("_id")
-    val id: String,
-    @SerializedName("link")
-    val link: String,
     @SerializedName("location")
     val location: String,
     @SerializedName("skills")

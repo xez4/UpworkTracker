@@ -1,6 +1,5 @@
 package com.android.upworktracker.entity
 
-
 import com.google.gson.annotations.SerializedName
 
 data class TrackerRequest(
@@ -20,8 +19,6 @@ data class TrackerRequest(
     val paging: String = "0%3B100",
     @SerializedName("proposals")
     val proposals: String = "",
-    @SerializedName("q")
-    val q: String = "",
     @SerializedName("sort")
     val sort: String = "",
     @SerializedName("verified_payment_only")

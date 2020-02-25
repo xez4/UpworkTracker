@@ -9,4 +9,5 @@ interface AdvertView : MvpView {
     fun refresh()
     fun setToolbar()
     fun initAdapter(advertAdapter: AdvertAdapter)
+    fun finishAdvertActivity()
 }

@@ -2,12 +2,7 @@ package com.android.upworktracker.intro
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
-import android.text.Spannable
-import android.text.SpannableString
-import android.text.style.ForegroundColorSpan
-import android.widget.TextView
 import com.android.upworktracker.R
 import com.android.upworktracker.adverts.AdvertActivity
 import kotlinx.android.synthetic.main.activity_intro.*
@@ -42,4 +37,5 @@ class IntroActivity : MvpAppCompatActivity(), IntroView {
         getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE).edit()
             .putBoolean("isFirstRun", false).apply()
     }
+
 }

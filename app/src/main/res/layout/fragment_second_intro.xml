@@ -50,5 +50,7 @@
             android:text="@string/second_fragment_description"
             android:textAlignment="center"
             android:textSize="20sp" />
+
     </LinearLayout>
+
 </FrameLayout>

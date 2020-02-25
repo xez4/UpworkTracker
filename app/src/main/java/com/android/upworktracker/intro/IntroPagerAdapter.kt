@@ -19,4 +19,5 @@ class IntroPagerAdapter(
     override fun getCount(): Int {
         return introFragments.size
     }
+
 }

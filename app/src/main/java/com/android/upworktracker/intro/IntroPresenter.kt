@@ -13,6 +13,7 @@ class IntroPresenter : MvpPresenter<IntroView>() {
 
     fun notifyNextButtonClick(viewPager: ViewPager, size: Int) {
         val nextPageItem = viewPager.currentItem + 1
+
         if (nextPageItem < size) {
             viewPager.currentItem = nextPageItem
         } else {
@@ -25,4 +26,5 @@ class IntroPresenter : MvpPresenter<IntroView>() {
         add(SecondIntroFragment())
         add(ThirdIntroFragment())
     }
+
 }
