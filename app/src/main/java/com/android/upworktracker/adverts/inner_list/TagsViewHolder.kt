@@ -24,5 +24,4 @@ class TagsViewHolder internal constructor(itemView: View) : RecyclerView.ViewHol
     .replace("&lsquo;", "‘")
     .replace("#8217;", "’")
 
-
 }
