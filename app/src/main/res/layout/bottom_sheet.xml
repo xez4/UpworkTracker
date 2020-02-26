@@ -4,8 +4,8 @@
     android:layout_height="wrap_content"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:overScrollMode="never"
     android:id="@+id/bottomSheet">
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -64,7 +64,7 @@
             android:layout_margin="15dp"
             android:text="Experience level"
             android:textColor="#000"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <View
@@ -87,7 +87,7 @@
             android:layout_margin="15dp"
             android:text="Client History"
             android:textColor="#000"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <View
@@ -111,7 +111,7 @@
             android:layout_margin="15dp"
             android:text="Number of proposals"
             android:textColor="#000"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <View
@@ -134,7 +134,7 @@
             android:layout_margin="15dp"
             android:text="Budget"
             android:textColor="#000"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <TextView
@@ -142,7 +142,6 @@
             android:layout_height="1dp"
             android:layout_marginStart="20dp"
             android:background="#888" />
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/budgetRecyclerView"
@@ -152,14 +151,13 @@
             android:scrollbars="none"
             android:nestedScrollingEnabled="false"/>
 
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:text="Client Info"
             android:textColor="#000"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <View
@@ -176,14 +174,13 @@
             android:scrollbars="none"
             android:nestedScrollingEnabled="false"/>
 
-
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:text="Hours Per Week"
             android:textColor="#000"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <View
@@ -191,7 +188,6 @@
             android:layout_height="1dp"
             android:layout_marginStart="20dp"
             android:background="#888" />
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/hoursPerWeekRecyclerView"
@@ -207,7 +203,7 @@
             android:layout_margin="15dp"
             android:text="Client Location"
             android:textColor="#000"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
         <View

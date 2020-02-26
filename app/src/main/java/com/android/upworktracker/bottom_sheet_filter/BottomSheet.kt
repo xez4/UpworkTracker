@@ -17,21 +17,19 @@ class BottomSheet : BottomSheetDialogFragment() {
             savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
-
         return inflater.inflate(R.layout.bottom_sheet, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         val sortingByData = arrayListOf("Newest", "Relevance", "Client spend", "Client rating")
         val sortingByAdapter = RadioAdapter(sortingByData)
+
         sortingByRecyclerView.apply {
             layoutManager = LinearLayoutManager(view.context)
             adapter = sortingByAdapter
         }
-
 
         val jobTypeData = arrayListOf("Any Job Type", "Horly", "Fixed Price")
         val jobTypeAdapter = RadioAdapter(jobTypeData)
@@ -40,13 +38,13 @@ class BottomSheet : BottomSheetDialogFragment() {
             adapter = jobTypeAdapter
         }
 
-
         val experienceLevelData = arrayListOf(
                 "Any experience level",
                 "Entry Level - $",
                 "Intermediate - $$",
                 "Master - $$$"
         )
+
         val experienceLevelAdapter = RadioAdapter(experienceLevelData)
         experienceRecyclerView.apply {
             layoutManager = LinearLayoutManager(view.context)
@@ -60,7 +58,6 @@ class BottomSheet : BottomSheetDialogFragment() {
             layoutManager = LinearLayoutManager(view.context)
             adapter = clientHistoryAdapter
         }
-
 
         val numberOfProposalsData = arrayListOf(
                 "Any Number of Proposals",
@@ -97,12 +94,12 @@ class BottomSheet : BottomSheetDialogFragment() {
             adapter = clientHistoryAdapter
         }
 
-        val hoursPerWeekData =
-                arrayListOf("Any Hours Per Week", "Less than 30 hrs/week", "More than 30 hrs/week")
+        val hoursPerWeekData = arrayListOf("Any Hours Per Week", "Less than 30 hrs/week", "More than 30 hrs/week")
         val hoursPerWeekAdapter = RadioAdapter(hoursPerWeekData)
         hoursPerWeekRecyclerView.apply {
             layoutManager = LinearLayoutManager(view.context)
             adapter = hoursPerWeekAdapter
         }
     }
+
 }
