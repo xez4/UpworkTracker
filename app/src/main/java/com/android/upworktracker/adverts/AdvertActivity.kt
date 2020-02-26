@@ -6,6 +6,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.upworktracker.R
+import com.android.upworktracker.bottom_sheet_filter.BottomSheet
 import com.android.upworktracker.intro.IntroActivity
 import kotlinx.android.synthetic.main.activity_advert.*
 import moxy.MvpAppCompatActivity
@@ -28,6 +29,9 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
         setContentView(R.layout.activity_advert)
         setToolbar()
         refresh()
+        filterButton.setOnClickListener{
+            BottomSheet().show(supportFragmentManager, "Dialog")
+        }
     }
 
     override fun refresh() {
@@ -58,5 +62,6 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
         advertPresenter.notifyOptionsItemSelected(item.itemId)
         return true
     }
+
 
 }
