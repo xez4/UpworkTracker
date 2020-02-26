@@ -65,4 +65,6 @@ dependencies {
     implementation "com.github.moxy-community:moxy-android:$moxyVersion"
     implementation "com.github.moxy-community:moxy-androidx:$moxyVersion"
     kapt "com.github.moxy-community:moxy-compiler:$moxyVersion"
+    // ViewPager2
+    implementation "androidx.viewpager2:viewpager2:1.0.0"
 }
