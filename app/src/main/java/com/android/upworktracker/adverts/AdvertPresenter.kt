@@ -1,12 +1,10 @@
 package com.android.upworktracker.adverts
 
-import android.content.Context
-import android.content.Intent
+import android.content.SharedPreferences
 import android.util.Log
 import com.android.upworktracker.R
 import com.android.upworktracker.entity.TrackerRequest
 import com.android.upworktracker.entity.TrackerResponse
-import com.android.upworktracker.intro.IntroActivity
 import com.android.upworktracker.network.services.UpworkService
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
@@ -15,7 +13,10 @@ import moxy.InjectViewState
 import moxy.MvpPresenter
 
 @InjectViewState
-class AdvertPresenter(private val upworkService: UpworkService, val context: Context) : MvpPresenter<AdvertView>() {
+class AdvertPresenter(
+        private val upworkService: UpworkService,
+        private val sharedPreferences: SharedPreferences
+) : MvpPresenter<AdvertView>() {
 
     private val compositeDisposable = CompositeDisposable()
 
@@ -26,19 +27,18 @@ class AdvertPresenter(private val upworkService: UpworkService, val context: Con
                 upworkService.post(TrackerRequest())
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe({
-                            loadData(it)
-                            Log.e("response", it.first().toString())
-                        },
-                                { Log.e("response", "unluko") }
+                        .subscribe(
+                                { loadData(it) },
+                                { Log.e("response", "Error: getAdvert()") }
                         )
+        
+        compositeDisposable.add(disposable)
     }
 
     fun isFirstRun() {
         val isFirstRun =
-                context.getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE).getBoolean("isFirstRun", true)
+                sharedPreferences.getBoolean("isFirstRun", true)
         if (isFirstRun) {
-            context.startActivity(Intent(context, IntroActivity::class.java))
             viewState.finishAdvertActivity()
         }
     }
@@ -60,4 +60,5 @@ class AdvertPresenter(private val upworkService: UpworkService, val context: Con
         super.onDestroy()
         compositeDisposable.dispose()
     }
+
 }

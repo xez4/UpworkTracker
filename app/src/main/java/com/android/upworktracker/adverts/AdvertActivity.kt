@@ -1,10 +1,12 @@
 package com.android.upworktracker.adverts
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.upworktracker.R
+import com.android.upworktracker.intro.IntroActivity
 import kotlinx.android.synthetic.main.activity_advert.*
 import moxy.MvpAppCompatActivity
 import moxy.presenter.InjectPresenter
@@ -33,6 +35,7 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
     }
 
     override fun finishAdvertActivity() {
+        startActivity(Intent(this, IntroActivity::class.java))
         finish()
     }
 

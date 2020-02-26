@@ -1,7 +1,7 @@
 package com.android.upworktracker.intro
 
-import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import com.android.upworktracker.R
 import com.android.upworktracker.adverts.AdvertActivity
@@ -10,6 +10,7 @@ import moxy.MvpAppCompatActivity
 import moxy.presenter.InjectPresenter
 import moxy.presenter.ProvidePresenter
 import org.koin.android.ext.android.get
+import org.koin.android.ext.android.inject
 
 class IntroActivity : MvpAppCompatActivity(), IntroView {
 
@@ -18,6 +19,8 @@ class IntroActivity : MvpAppCompatActivity(), IntroView {
 
     @ProvidePresenter
     fun provideIntroPresenter() = get<IntroPresenter>()
+
+    private val sharedPreferences: SharedPreferences by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,8 +37,7 @@ class IntroActivity : MvpAppCompatActivity(), IntroView {
     override fun finishActivity() {
         startActivity(Intent(this, AdvertActivity::class.java))
         finish()
-        getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE).edit()
-            .putBoolean("isFirstRun", false).apply()
+        sharedPreferences.edit().putBoolean("isFirstRun", false).apply()
     }
 
 }
