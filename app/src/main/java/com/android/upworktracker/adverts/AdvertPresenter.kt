@@ -31,7 +31,7 @@ class AdvertPresenter(
                                 { loadData(it) },
                                 { Log.e("response", "Error: getAdvert()") }
                         )
-        
+
         compositeDisposable.add(disposable)
     }
 
