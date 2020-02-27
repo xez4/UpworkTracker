@@ -20,4 +20,28 @@
     <string name="third_fragment_description">Tracker lets you choose what job categories, budget, locations, keywords you want to see.</string>
     <string name="welcome_header">Welcome to</string>
     <string name="upwork_tracker_header">Upwork Tracker</string>
+
+
+    <string name="client_location">Client Location</string>
+    <string name="hours_per_week">Hours Per Week</string>
+    <string name="client_info">Client Info</string>
+    <string name="budget">Budget</string>
+    <string name="number_of_proposals">Number of Proposals</string>
+    <string name="client_history">Client History</string>
+    <string name="experience_level">Experience Level</string>
+    <string name="job_type">Job Type</string>
+    <string name="sorting_by">Sorting By</string>
+    <string name="accounting_amp_consulting"><![CDATA[accounting & consulting]]></string>
+    <string name="admin_support">admin support</string>
+    <string name="customer_service">customer service</string>
+    <string name="data_science_amp_analytics"><![CDATA[data science & analytics]]></string>
+    <string name="design_amp_creative"><![CDATA[design & creative]]></string>
+    <string name="engineering_amp_architecture"><![CDATA[engineering & architecture]]></string>
+    <string name="it_amp_networking"><![CDATA[it & networking]]></string>
+    <string name="legal">legal</string>
+    <string name="sales_amp_marketing"><![CDATA[sales & marketing]]></string>
+    <string name="translation">translation</string>
+    <string name="web_mobile_amp_software_dev"><![CDATA[web, mobile & software dev]]></string>
+    <string name="writing">writing</string>
+
 </resources>

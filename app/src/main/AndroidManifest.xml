@@ -15,6 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <activity android:name=".bottom_sheet_filter.CategoryFilterActivity"/>
         <activity android:name=".intro.IntroActivity" />
         <activity android:name=".adverts.AdvertActivity">
             <intent-filter>
