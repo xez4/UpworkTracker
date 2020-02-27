@@ -9,7 +9,7 @@ import com.android.upworktracker.R
 class RadioAdapter(private val dataset: ArrayList<String>) : RecyclerView.Adapter<RadioViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RadioViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.radio_button, parent, false) as View
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.checkbox_item, parent, false) as View
         return RadioViewHolder(view)
     }
 

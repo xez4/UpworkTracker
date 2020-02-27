@@ -1,16 +1,24 @@
 package com.android.upworktracker.bottom_sheet_filter
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.upworktracker.R
+
 import com.android.upworktracker.bottom_sheet_filter.viewPager.ViewPagerFilterAdapter
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.bottom_sheet_view_pager.*
 import kotlinx.android.synthetic.main.filter_list.*
+
+import com.android.upworktracker.category_filter.CategoryFilterActivity
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import kotlinx.android.synthetic.main.bottom_sheet.*
+import kotlin.reflect.typeOf
+
 
 class BottomSheet : BottomSheetDialogFragment() {
 
@@ -27,7 +35,11 @@ class BottomSheet : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         bottomSheetViewPager.adapter = ViewPagerFilterAdapter(this)
+
+
+
         val sortingByData = arrayListOf("Newest", "Relevance", "Client spend", "Client rating")
         val sortingByAdapter = RadioAdapter(sortingByData)
 //
@@ -43,7 +55,7 @@ class BottomSheet : BottomSheetDialogFragment() {
             }
         }.attach()
 
-        val jobTypeData = arrayListOf("Any Job Type", "Horly", "Fixed Price")
+        val jobTypeData = arrayListOf("Any Job Type", "Hourly", "Fixed Price")
         val jobTypeAdapter = RadioAdapter(jobTypeData)
 //        jobTypeRecyclerView.apply {
 //            layoutManager = LinearLayoutManager(view.context)
