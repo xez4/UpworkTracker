@@ -53,7 +53,8 @@ dependencies {
     implementation "org.koin:koin-androidx-scope:$koin_version"
     implementation "org.koin:koin-androidx-ext:$koin_version"
     // Page indicator
-    implementation 'me.relex:circleindicator:2.1.4'
+    implementation 'com.romandanylyk:pageindicatorview:1.0.3'
+    implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
     // Material Components
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'

@@ -29,7 +29,9 @@ class IntroActivity : MvpAppCompatActivity(), IntroView {
         setContentView(R.layout.activity_intro)
 
         introViewPager.adapter = introViewPagerAdapter
-        pageIndicatorView.setViewPager(introViewPager)
+        introViewPager.offscreenPageLimit = 3
+
+        pageIndicatorView.setViewPager2(introViewPager)
 
         nextPageButton.setOnClickListener {
             introPresenter.notifyNextButtonClick(introViewPager, introViewPagerAdapter.itemCount)
