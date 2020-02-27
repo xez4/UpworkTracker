@@ -1,4 +1,4 @@
-package com.android.upworktracker.category_filter
+package com.android.upworktracker.bottom_sheet_filter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -10,7 +10,9 @@ class CategoryAdapter(private val dataset: ArrayList<String>): RecyclerView.Adap
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.category_item, parent, false)
 
-        return CategoryViewHolder(view)
+        return CategoryViewHolder(
+            view
+        )
     }
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
