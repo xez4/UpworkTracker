@@ -5,7 +5,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.android.upworktracker.intro.fragments.PrimaryFragment
 
-class IntroViewPagerAdapter(fragment: FragmentActivity) : FragmentStateAdapter(fragment) {
+class IntroViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity) {
 
     private val pagesCount = 3
 
