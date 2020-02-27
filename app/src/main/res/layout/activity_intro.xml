@@ -7,7 +7,7 @@
     android:background="@color/concrete"
     tools:context=".intro.IntroActivity">
 
-    <androidx.viewpager.widget.ViewPager
+    <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/introViewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,21 +17,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.rd.PageIndicatorView
+    <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
         android:id="@+id/pageIndicatorView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
+        app:dotsColor="@color/lima"
+        app:dotsCornerRadius="4dp"
+        app:dotsSize="8dp"
+        app:dotsSpacing="2dp"
+        app:dotsStrokeColor="@color/greyNickel"
+        app:dotsStrokeWidth="2dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/introViewPager"
-        app:piv_animationType="thinWorm"
-        app:piv_dynamicCount="true"
-        app:piv_interactiveAnimation="true"
-        app:piv_radius="4dp"
-        app:piv_selectedColor="@color/lima"
-        app:piv_unselectedColor="@color/greyNickel"
-        app:piv_viewPager="@id/introViewPager" />
+        app:layout_constraintTop_toBottomOf="@id/introViewPager" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/nextPageButton"

@@ -29,4 +29,5 @@ class AdvertAdapter : RecyclerView.Adapter<AdvertViewHolder>() {
         adverts.addAll(items)
         notifyDataSetChanged()
     }
+
 }

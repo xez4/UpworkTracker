@@ -1,21 +1,18 @@
 package com.android.upworktracker.adverts
 
-import android.content.Context
 import android.content.Intent
-import android.graphics.Color
-import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.upworktracker.R
+import com.android.upworktracker.bottom_sheet_filter.BottomSheet
 import com.android.upworktracker.intro.IntroActivity
 import kotlinx.android.synthetic.main.activity_advert.*
 import moxy.MvpAppCompatActivity
 import moxy.presenter.InjectPresenter
 import moxy.presenter.ProvidePresenter
 import org.koin.android.ext.android.get
-
 
 class AdvertActivity : MvpAppCompatActivity(), AdvertView {
 
@@ -28,27 +25,22 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        if (Build.VERSION.SDK_INT < 23) {
-            window.statusBarColor = Color.BLACK
-        }
-
-        isFirstRun()
-
+        advertPresenter.isFirstRun()
         setContentView(R.layout.activity_advert)
         setToolbar()
         refresh()
-    }
-
-    fun isFirstRun() {
-        val isFirstRun =
-            getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE).getBoolean("isFirstRun", true)
-        if (isFirstRun) {
-            startActivity(Intent(this, IntroActivity::class.java))
+        filterButton.setOnClickListener{
+            BottomSheet().show(supportFragmentManager, "Dialog")
         }
     }
 
     override fun refresh() {
         advertPresenter.getAdvert()
+    }
+
+    override fun finishAdvertActivity() {
+        startActivity(Intent(this, IntroActivity::class.java))
+        finish()
     }
 
     override fun setToolbar() {
@@ -70,4 +62,6 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
         advertPresenter.notifyOptionsItemSelected(item.itemId)
         return true
     }
+
+
 }

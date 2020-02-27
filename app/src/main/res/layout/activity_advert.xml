@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             style="@style/Theme.MaterialComponents.Light.DarkActionBar"
@@ -34,7 +33,8 @@
                     android:id="@+id/filterButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
+                    android:padding="8dp"
+                    android:layout_marginTop="4dp"
                     android:background="@android:color/transparent"
                     android:src="@drawable/ic_filter_list_24px"
                     app:layout_constraintBottom_toTopOf="@id/upworkTrackerTextView"
@@ -64,4 +64,5 @@
         android:overScrollMode="never"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:listitem="@layout/adverts_card" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

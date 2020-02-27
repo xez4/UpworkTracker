@@ -8,8 +8,21 @@ class TagsViewHolder internal constructor(itemView: View) : RecyclerView.ViewHol
 
     internal fun bind(data: String?) {
         data.let {
-            itemView.tagAdvertText.text = data
+            itemView.tagAdvertText.text = decode(data)
         }
     }
+
+    private fun decode(str: String?) =
+            str!!.replace("&amp;amp;", "&")
+    .replace("&amp;", "&")
+    .replace("&quot;", "\"")
+    .replace("&apos;", "\'")
+    .replace("&lt;", "<")
+    .replace("&gt;", ">")
+    .replace("#039;", "\'")
+    .replace("&rsquo;", "’")
+    .replace("&lsquo;", "‘")
+    .replace("#8217;", "’")
+
 
 }

@@ -1,10 +1,11 @@
 package com.android.upworktracker.intro
 
-import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.Log
+import android.view.View
 import androidx.viewpager.widget.ViewPager
+import androidx.viewpager2.widget.ViewPager2
 import com.airbnb.lottie.LottieAnimationView
 import com.android.upworktracker.R
 import com.android.upworktracker.adverts.AdvertActivity
@@ -13,6 +14,7 @@ import moxy.MvpAppCompatActivity
 import moxy.presenter.InjectPresenter
 import moxy.presenter.ProvidePresenter
 import org.koin.android.ext.android.get
+import org.koin.android.ext.android.inject
 
 class IntroActivity : MvpAppCompatActivity(), IntroView {
 
@@ -25,36 +27,36 @@ class IntroActivity : MvpAppCompatActivity(), IntroView {
     @ProvidePresenter
     fun provideIntroPresenter() = get<IntroPresenter>()
 
+    private val introViewPagerAdapter = IntroViewPagerAdapter(this)
+
+    private val sharedPreferences: SharedPreferences by inject()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_intro)
 
-        val introFragments = introPresenter.initializeViewPager()
-        introViewPager.adapter = IntroPagerAdapter(supportFragmentManager, introFragments)
+        introViewPager.adapter = introViewPagerAdapter
+        introViewPager.offscreenPageLimit = 3
+
+        pageIndicatorView.setViewPager2(introViewPager)
 
         nextPageButton.setOnClickListener {
-            introPresenter.notifyNextButtonClick(introViewPager, introFragments.size)
+            introPresenter.notifyNextButtonClick(introViewPager, introViewPagerAdapter.itemCount)
         }
 
         ribbon = findViewById(R.id.ribbonLottieAnimationView)
         ribbonSecond = findViewById(R.id.ribbonLottieAnimationView2)
 
-        introViewPager.addOnPageChangeListener(onPageChangeListener)
+        introViewPager.registerOnPageChangeCallback(onPageChangeListener)
     }
 
     override fun finishActivity() {
         startActivity(Intent(this, AdvertActivity::class.java))
         finish()
-        getSharedPreferences("PREFERENCE", Context.MODE_PRIVATE).edit()
-            .putBoolean("isFirstRun", false).apply()
+        sharedPreferences.edit().putBoolean("isFirstRun", false).apply()
     }
 
-    private val onPageChangeListener = object : ViewPager.OnPageChangeListener {
-
-        override fun onPageScrollStateChanged(state: Int) {
-            //no-op
-        }
-
+    private val onPageChangeListener = object : ViewPager2.OnPageChangeCallback() {
         override fun onPageScrolled(
             position: Int,
             positionOffset: Float,
@@ -62,10 +64,5 @@ class IntroActivity : MvpAppCompatActivity(), IntroView {
         ) {
             introPresenter.notifyPageScrolled(position, ribbon, ribbonSecond)
         }
-
-        override fun onPageSelected(position: Int) {
-            //no-op
-        }
-
     }
 }
