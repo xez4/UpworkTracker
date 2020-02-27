@@ -3,7 +3,6 @@ package com.android.upworktracker.intro
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import com.android.upworktracker.R
 import com.android.upworktracker.adverts.AdvertActivity
 import kotlinx.android.synthetic.main.activity_intro.*
