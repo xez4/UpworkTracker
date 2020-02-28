@@ -1,5 +1,7 @@
 package com.android.upworktracker.intro
 
+import com.airbnb.lottie.LottieAnimationView
+import com.android.upworktracker.R
 import androidx.viewpager2.widget.ViewPager2
 import moxy.InjectViewState
 import moxy.MvpPresenter
@@ -17,10 +19,32 @@ class IntroPresenter : MvpPresenter<IntroView>() {
         }
     }
 
-//    fun initializeViewPager() = ArrayList<Fragment>().apply {
-//        add(FirstIntroFragment())
-//        add(SecondIntroFragment())
-//        add(ThirdIntroFragment())
-//    }
+    fun notifyPageScrolled(
+        position: Int,
+        ribbon: LottieAnimationView,
+        ribbonSecond: LottieAnimationView
+    ) {
+        if (position == 2) {
+            with(ribbon) {
+                if (!this.isAnimating) {
+                    setAnimation(R.raw.lottie_ribbon_animation)
+                    playAnimation()
+                    repeatCount = com.airbnb.lottie.LottieDrawable.INFINITE
+                    speed = 0.8f
+
+                    with(ribbonSecond) {
+                        if (!this.isAnimating) {
+                            setAnimation(R.raw.lottie_ribbon_animation)
+                            repeatMode = com.airbnb.lottie.LottieDrawable.RESTART
+                            setMinAndMaxFrame(35, 140)
+                            playAnimation()
+                            repeatCount = com.airbnb.lottie.LottieDrawable.INFINITE
+                            speed = 0.8f
+                        }
+                    }
+                }
+            }
+        }
+    }
 
 }

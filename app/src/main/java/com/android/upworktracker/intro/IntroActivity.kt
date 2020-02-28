@@ -3,6 +3,10 @@ package com.android.upworktracker.intro
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.view.View
+import androidx.viewpager.widget.ViewPager
+import androidx.viewpager2.widget.ViewPager2
+import com.airbnb.lottie.LottieAnimationView
 import com.android.upworktracker.R
 import com.android.upworktracker.adverts.AdvertActivity
 import kotlinx.android.synthetic.main.activity_intro.*
@@ -13,6 +17,9 @@ import org.koin.android.ext.android.get
 import org.koin.android.ext.android.inject
 
 class IntroActivity : MvpAppCompatActivity(), IntroView {
+
+    lateinit var ribbon: LottieAnimationView
+    lateinit var ribbonSecond: LottieAnimationView
 
     @InjectPresenter
     lateinit var introPresenter: IntroPresenter
@@ -36,6 +43,11 @@ class IntroActivity : MvpAppCompatActivity(), IntroView {
         nextPageButton.setOnClickListener {
             introPresenter.notifyNextButtonClick(introViewPager, introViewPagerAdapter.itemCount)
         }
+
+        ribbon = findViewById(R.id.ribbonLottieAnimationView)
+        ribbonSecond = findViewById(R.id.ribbonLottieAnimationView2)
+
+        introViewPager.registerOnPageChangeCallback(onPageChangeListener)
     }
 
     override fun finishActivity() {
@@ -44,4 +56,13 @@ class IntroActivity : MvpAppCompatActivity(), IntroView {
         sharedPreferences.edit().putBoolean("isFirstRun", false).apply()
     }
 
+    private val onPageChangeListener = object : ViewPager2.OnPageChangeCallback() {
+        override fun onPageScrolled(
+            position: Int,
+            positionOffset: Float,
+            positionOffsetPixels: Int
+        ) {
+            introPresenter.notifyPageScrolled(position, ribbon, ribbonSecond)
+        }
+    }
 }
