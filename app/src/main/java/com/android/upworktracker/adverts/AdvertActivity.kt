@@ -30,7 +30,7 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
         setToolbar()
         refresh()
         filterButton.setOnClickListener{
-            BottomSheet().show(supportFragmentManager, "Dialog")
+            BottomSheet().show(supportFragmentManager,"sdasd")
         }
     }
 

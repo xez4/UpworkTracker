@@ -5,12 +5,13 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 
 class ViewPagerFilterAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
-    override fun getItemCount() = 2
+    private val pageCount = 2
+
+    override fun getItemCount() = pageCount
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
             0 -> FilterFragment.newInstance()
-
             else -> CategoryFragment.newInstance()
         }
     }

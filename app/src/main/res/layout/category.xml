@@ -23,104 +23,104 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/CustomTextViewCategory"
-                android:text="@string/accounting_amp_consulting"/>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                style="@style/CustomTextViewCategory"-->
+<!--                android:text="@string/accounting_amp_consulting"/>-->
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/accountingAndConsultingRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/accountingAndConsultingRecyclerView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"/>-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/CustomTextViewCategory"
-                android:text="@string/admin_support"/>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                style="@style/CustomTextViewCategory"-->
+<!--                android:text="@string/admin_support"/>-->
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/adminSupportRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/adminSupportRecyclerView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"/>-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/CustomTextViewCategory"
-                android:text="@string/customer_service"/>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                style="@style/CustomTextViewCategory"-->
+<!--                android:text="@string/customer_service"/>-->
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/customerServiceRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/customerServiceRecyclerView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"/>-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/CustomTextViewCategory"
-                android:text="@string/data_science_amp_analytics"/>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                style="@style/CustomTextViewCategory"-->
+<!--                android:text="@string/data_science_amp_analytics"/>-->
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/dataScienceAndAnalyticsRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/dataScienceAndAnalyticsRecyclerView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"/>-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/CustomTextViewCategory"
-                android:text="@string/design_amp_creative"/>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                style="@style/CustomTextViewCategory"-->
+<!--                android:text="@string/design_amp_creative"/>-->
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/designAndCreativeRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/designAndCreativeRecyclerView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"/>-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/CustomTextViewCategory"
-                android:text="@string/engineering_amp_architecture"/>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                style="@style/CustomTextViewCategory"-->
+<!--                android:text="@string/engineering_amp_architecture"/>-->
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/engineeringAndArchitectureRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/engineeringAndArchitectureRecyclerView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"/>-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/CustomTextViewCategory"
-                android:text="@string/it_amp_networking"/>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                style="@style/CustomTextViewCategory"-->
+<!--                android:text="@string/it_amp_networking"/>-->
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/itAndNetworkingRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/itAndNetworkingRecyclerView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"/>-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/CustomTextViewCategory"
-                android:text="@string/legal"/>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                style="@style/CustomTextViewCategory"-->
+<!--                android:text="@string/legal"/>-->
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/legalRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/legalRecyclerView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"/>-->
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                style="@style/CustomTextViewCategory"
-                android:text="@string/sales_amp_marketing"/>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                style="@style/CustomTextViewCategory"-->
+<!--                android:text="@string/sales_amp_marketing"/>-->
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/salesAndMarketingRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/salesAndMarketingRecyclerView"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"/>-->
 
             <TextView
                 android:layout_width="match_parent"

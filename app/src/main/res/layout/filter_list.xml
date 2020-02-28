@@ -193,26 +193,26 @@
         android:orientation="horizontal">
 
 
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="0dp"
-            android:layout_height="65dp"
-            android:layout_weight="1"
-            android:text="Clear"
-            android:textAllCaps="false"
-            android:textColor="#000"
-            android:textSize="18sp"
-            app:backgroundTint="#F7F7F7"
-            app:cornerRadius="0dp"
-            app:strokeColor="#888" />
+<!--        <com.google.android.material.button.MaterialButton-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="65dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="Clear"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="#000"-->
+<!--            android:textSize="18sp"-->
+<!--            app:backgroundTint="#F7F7F7"-->
+<!--            app:cornerRadius="0dp"-->
+<!--            app:strokeColor="#888" />-->
 
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="0dp"
-            android:layout_height="65dp"
-            android:layout_weight="1"
-            android:text="Track"
-            android:textAllCaps="false"
-            android:textSize="18sp"
-            app:cornerRadius="0dp" />
+<!--        <com.google.android.material.button.MaterialButton-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="65dp"-->
+<!--            android:layout_weight="1"-->
+<!--            android:text="Track"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textSize="18sp"-->
+<!--            app:cornerRadius="0dp" />-->
 
     </LinearLayout>
 

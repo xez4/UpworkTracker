@@ -1,5 +1,6 @@
 package com.android.upworktracker.bottom_sheet_filter
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,9 +12,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.bottom_sheet_view_pager.*
 
-
 class BottomSheet : BottomSheetDialogFragment() {
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,7 +26,6 @@ class BottomSheet : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         bottomSheetViewPager.adapter = ViewPagerFilterAdapter(this)
 
         TabLayoutMediator(viewPagerTabLayout, bottomSheetViewPager) { tab, position ->
@@ -36,8 +34,11 @@ class BottomSheet : BottomSheetDialogFragment() {
                 else -> "category"
             }
         }.attach()
+
+
     }
 
-
+    override fun onDismiss(dialog: DialogInterface) {
+    }
 
 }
