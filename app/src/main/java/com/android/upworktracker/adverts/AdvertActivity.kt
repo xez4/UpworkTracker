@@ -10,6 +10,7 @@ import com.android.upworktracker.R
 import com.android.upworktracker.bottom_sheet_filter.BottomSheet
 import com.android.upworktracker.intro.IntroActivity
 import kotlinx.android.synthetic.main.activity_advert.*
+import kotlinx.android.synthetic.main.toolbar.*
 import moxy.MvpAppCompatActivity
 import moxy.presenter.InjectPresenter
 import moxy.presenter.ProvidePresenter
@@ -49,7 +50,7 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
 
     override fun hideProgress() {
         if (advertActivityProgressBar != null) advertActivityProgressBar.visibility =
-            ProgressBar.INVISIBLE
+                ProgressBar.INVISIBLE
     }
 
     override fun refresh() {
