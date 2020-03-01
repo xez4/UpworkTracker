@@ -29,13 +29,14 @@
                 android:layout_height="wrap_content"
                 app:layout_scrollFlags="scroll|enterAlways|snap">
 
+
                 <ImageButton
                     android:id="@+id/filterButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="8dp"
                     android:layout_marginTop="4dp"
                     android:background="@android:color/transparent"
+                    android:padding="8dp"
                     android:src="@drawable/ic_filter_list_24px"
                     app:layout_constraintBottom_toTopOf="@id/upworkTrackerTextView"
                     app:layout_constraintStart_toStartOf="parent"
@@ -56,6 +57,13 @@
         </com.google.android.material.appbar.MaterialToolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
+
+    <ProgressBar
+        android:id="@+id/advertActivityProgressBar"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:indeterminate="true" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerAdvertsCards"

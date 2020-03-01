@@ -10,4 +10,5 @@ interface AdvertView : MvpView {
     fun setToolbar()
     fun initAdapter(advertAdapter: AdvertAdapter)
     fun finishAdvertActivity()
+    fun hideProgress()
 }

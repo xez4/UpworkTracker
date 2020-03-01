@@ -14,15 +14,14 @@ class TagsViewHolder internal constructor(itemView: View) : RecyclerView.ViewHol
 
     private fun decode(str: String?) =
             str!!.replace("&amp;amp;", "&")
-    .replace("&amp;", "&")
-    .replace("&quot;", "\"")
-    .replace("&apos;", "\'")
-    .replace("&lt;", "<")
-    .replace("&gt;", ">")
-    .replace("#039;", "\'")
-    .replace("&rsquo;", "’")
-    .replace("&lsquo;", "‘")
-    .replace("#8217;", "’")
-
+                    .replace("&amp;", "&")
+                    .replace("&quot;", "\"")
+                    .replace("&apos;", "\'")
+                    .replace("&lt;", "<")
+                    .replace("&gt;", ">")
+                    .replace("#039;", "\'")
+                    .replace("&rsquo;", "’")
+                    .replace("&lsquo;", "‘")
+                    .replace("#8217;", "’")
 
 }

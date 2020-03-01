@@ -1,8 +1,8 @@
 package com.android.upworktracker.intro
 
+import androidx.viewpager2.widget.ViewPager2
 import com.airbnb.lottie.LottieAnimationView
 import com.android.upworktracker.R
-import androidx.viewpager2.widget.ViewPager2
 import moxy.InjectViewState
 import moxy.MvpPresenter
 
@@ -20,9 +20,9 @@ class IntroPresenter : MvpPresenter<IntroView>() {
     }
 
     fun notifyPageScrolled(
-        position: Int,
-        ribbon: LottieAnimationView,
-        ribbonSecond: LottieAnimationView
+            position: Int,
+            ribbon: LottieAnimationView,
+            ribbonSecond: LottieAnimationView
     ) {
         if (position == 2) {
             with(ribbon) {

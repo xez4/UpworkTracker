@@ -28,7 +28,10 @@ class AdvertPresenter(
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(
-                                { loadData(it) },
+                                {
+                                    loadData(it)
+                                    viewState.hideProgress()
+                                },
                                 { Log.e("response", "Error: getAdvert()") }
                         )
 

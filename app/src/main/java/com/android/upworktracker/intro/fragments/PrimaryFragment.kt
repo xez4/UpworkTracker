@@ -28,9 +28,9 @@ class PrimaryFragment : BaseFragment() {
 
     private fun getPageWelcomeHeader(position: Int): String {
         val headerList = listOf(
-            getString(R.string.welcome_header),
-            "",
-            ""
+                getString(R.string.welcome_header),
+                "",
+                ""
         )
 
         return headerList[position]
@@ -38,9 +38,9 @@ class PrimaryFragment : BaseFragment() {
 
     private fun getPageHeader(position: Int): String {
         val headerList = listOf(
-            R.string.upwork_tracker_header,
-            R.string.upwork_tracker_header,
-            R.string.upwork_tracker_header
+                R.string.upwork_tracker_header,
+                R.string.upwork_tracker_header,
+                R.string.upwork_tracker_header
         )
 
         return getString(headerList[position])
@@ -48,9 +48,9 @@ class PrimaryFragment : BaseFragment() {
 
     private fun getPageTitle(position: Int): String {
         val titleList = listOf(
-            R.string.first_fragment_title,
-            R.string.second_fragment_title,
-            R.string.third_fragment_title
+                R.string.first_fragment_title,
+                R.string.second_fragment_title,
+                R.string.third_fragment_title
         )
 
         return getString(titleList[position])
@@ -58,9 +58,9 @@ class PrimaryFragment : BaseFragment() {
 
     private fun getPageImage(position: Int): Drawable {
         val imagesList = listOf(
-            R.drawable.first_fragment_picture,
-            R.drawable.second_fragment_picture,
-            R.drawable.third_fragment_picture
+                R.drawable.first_fragment_picture,
+                R.drawable.second_fragment_picture,
+                R.drawable.third_fragment_picture
         )
 
         return resources.getDrawable(imagesList[position])
@@ -68,9 +68,9 @@ class PrimaryFragment : BaseFragment() {
 
     private fun getPageDescription(position: Int): String {
         val descriptionList = listOf(
-            R.string.first_fragment_description,
-            R.string.second_fragment_description,
-            R.string.third_fragment_description
+                R.string.first_fragment_description,
+                R.string.second_fragment_description,
+                R.string.third_fragment_description
         )
 
         return getString(descriptionList[position])

@@ -11,8 +11,8 @@ val networkModule = module {
 }
 
 fun provideRetrofit(): UpworkService = Retrofit.Builder()
-    .baseUrl("https://upwork-tracker.herokuapp.com/api/")
-    .addConverterFactory(GsonConverterFactory.create())
-    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-    .build()
-    .create(UpworkService::class.java)
+        .baseUrl("https://upwork-tracker.herokuapp.com/api/")
+        .addConverterFactory(GsonConverterFactory.create())
+        .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+        .build()
+        .create(UpworkService::class.java)

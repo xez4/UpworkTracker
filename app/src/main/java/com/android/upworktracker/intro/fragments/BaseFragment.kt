@@ -14,8 +14,8 @@ import com.android.upworktracker.R
 abstract class BaseFragment : Fragment() {
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(getLayoutResId(), container, false)
     }
@@ -26,10 +26,10 @@ abstract class BaseFragment : Fragment() {
         val textView = view.findViewById<TextView>(R.id.fragmentHeaderTextView)
         val multiColoredHeader = SpannableString(textView.text)
         multiColoredHeader.setSpan(
-            ForegroundColorSpan(resources.getColor(R.color.lima)),
-            0,
-            2,
-            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                ForegroundColorSpan(resources.getColor(R.color.lima)),
+                0,
+                2,
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
         )
         textView.text = multiColoredHeader
     }

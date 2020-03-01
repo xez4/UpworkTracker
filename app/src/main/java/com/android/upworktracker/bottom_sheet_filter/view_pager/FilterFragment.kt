@@ -1,4 +1,4 @@
-package com.android.upworktracker.bottom_sheet_filter.viewPager
+package com.android.upworktracker.bottom_sheet_filter.view_pager
 
 import android.os.Bundle
 import android.view.LayoutInflater
