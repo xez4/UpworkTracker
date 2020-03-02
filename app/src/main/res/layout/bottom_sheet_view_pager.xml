@@ -1,51 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/idBottomSheet"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+    android:layout_height="match_parent">
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/viewPagerTabLayout"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/idBottomSheet"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/bottomSheetViewPager"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/viewPagerTabLayout" />
-
-    <LinearLayout
-        android:id="@+id/fkgertojtrhjytohiryohyrh"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="0dp"
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/viewPagerTabLayout"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Clear" />
+            android:layout_gravity="top"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="0dp"
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/bottomSheetViewPager"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Track" />
+            android:layout_gravity="top"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/viewPagerTabLayout" />
 
-    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/fkgertojtrhjytohiryohyrh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Clear" />
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Track" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
