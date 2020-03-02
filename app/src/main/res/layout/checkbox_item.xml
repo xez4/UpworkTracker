@@ -5,28 +5,29 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_marginStart="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/textView"
-            android:layout_gravity="center_vertical"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_margin="10dp"
             android:layout_weight="7"
             android:textColor="#000"
             android:textSize="15sp" />
 
         <CheckBox
-            android:buttonTint="#6FA850"
             android:id="@+id/checkbox"
-            android:gravity="center"
-            android:layout_marginStart="15dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:buttonTint="@color/lima"
+            android:foregroundTint="@color/lima"
+            android:gravity="center" />
 
     </LinearLayout>
 

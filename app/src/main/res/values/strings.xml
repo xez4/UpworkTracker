@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">UpworkTracker</string>
 
-    <string name="refresh">refresh</string>
+    <string name="refresh">Refresh</string>
     <string name="upwork_tracker">Upwork Tracker</string>
     <string name="title_card">PANAMA (Spanish) male VO to record TV spot</string>
     <string name="category_card">Voice talent</string>

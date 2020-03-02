@@ -8,54 +8,14 @@
     android:orientation="vertical"
     tools:context=".adverts.AdvertActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+    <include layout="@layout/toolbar" />
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            style="@style/Theme.MaterialComponents.Light.DarkActionBar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/concrete"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_scrollFlags="scroll|enterAlways|snap"
-            app:menu="@menu/toolbar_menu">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layout_scrollFlags="scroll|enterAlways|snap">
-
-                <ImageButton
-                    android:id="@+id/filterButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp"
-                    android:layout_marginTop="4dp"
-                    android:background="@android:color/transparent"
-                    android:src="@drawable/ic_filter_list_24px"
-                    app:layout_constraintBottom_toTopOf="@id/upworkTrackerTextView"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/upworkTrackerTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/upwork_tracker"
-                    android:textColor="@color/lima"
-                    android:textSize="36sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/filterButton" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.appbar.MaterialToolbar>
-
-    </com.google.android.material.appbar.AppBarLayout>
+    <ProgressBar
+        android:id="@+id/advertActivityProgressBar"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_gravity="center"
+        android:indeterminate="true" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerAdvertsCards"

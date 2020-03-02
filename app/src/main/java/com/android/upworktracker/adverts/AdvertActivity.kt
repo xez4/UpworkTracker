@@ -4,11 +4,13 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ProgressBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.upworktracker.R
 import com.android.upworktracker.bottom_sheet_filter.BottomSheet
 import com.android.upworktracker.intro.IntroActivity
 import kotlinx.android.synthetic.main.activity_advert.*
+import kotlinx.android.synthetic.main.toolbar.*
 import moxy.MvpAppCompatActivity
 import moxy.presenter.InjectPresenter
 import moxy.presenter.ProvidePresenter
@@ -22,16 +24,33 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
     @ProvidePresenter
     fun provideAdvertsPresenter() = get<AdvertPresenter>()
 
+    private val bottomSheet = BottomSheet()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        advertPresenter.isFirstRun()
         setContentView(R.layout.activity_advert)
+
+        advertActivityProgressBar.visibility = ProgressBar.VISIBLE
+
+        advertPresenter.isFirstRun()
+
         setToolbar()
+
         refresh()
-        filterButton.setOnClickListener{
-            BottomSheet().show(supportFragmentManager, "Dialog")
+
+        filterButton.setOnClickListener {
+            if (!bottomSheet.isAdded) {
+                bottomSheet.show(supportFragmentManager, "TAG")
+            } else {
+                bottomSheet.dialog?.show()
+            }
         }
+    }
+
+    override fun hideProgress() {
+        if (advertActivityProgressBar != null) advertActivityProgressBar.visibility =
+                ProgressBar.INVISIBLE
     }
 
     override fun refresh() {
@@ -62,6 +81,5 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
         advertPresenter.notifyOptionsItemSelected(item.itemId)
         return true
     }
-
 
 }
