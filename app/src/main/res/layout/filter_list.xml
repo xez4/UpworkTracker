@@ -192,7 +192,6 @@
         android:layout_gravity="bottom"
         android:orientation="horizontal">
 
-
         <com.google.android.material.button.MaterialButton
             android:layout_width="0dp"
             android:layout_height="65dp"
@@ -203,13 +202,17 @@
             android:textSize="18sp"
             app:backgroundTint="#F7F7F7"
             app:cornerRadius="0dp"
-            app:strokeColor="#888" />
+            app:strokeColor="#888"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"/>
 
         <com.google.android.material.button.MaterialButton
             android:layout_width="0dp"
             android:layout_height="65dp"
             android:layout_weight="1"
             android:text="Track"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
             android:textAllCaps="false"
             android:textSize="18sp"
             app:cornerRadius="0dp" />
