@@ -17,15 +17,14 @@
             android:paddingBottom="70dp">
 
             <TextView
-                style="@style/CustomTextViewFilter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/sorting_by" />
+                android:text="@string/sorting_by"
+                style="@style/CustomTextViewFilter"/>
 
-            <View
-                style="@style/Line"
+            <View style="@style/Line"
                 android:layout_marginStart="20dp"
-                android:background="#888" />
+                android:background="#888"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/sortingByRecyclerView"
@@ -37,26 +36,24 @@
 
             <TextView
                 android:id="@+id/category"
-                style="@style/CustomTextViewFilter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Category" />
+                android:text="Category"
+                style="@style/CustomTextViewFilter"/>
 
-            <View
-                style="@style/Line"
+            <View style="@style/Line"
                 android:layout_marginStart="20dp"
-                android:background="#888" />
+                android:background="#888"/>
 
             <TextView
-                style="@style/CustomTextViewFilter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/job_type" />
+                android:text="@string/job_type"
+                style="@style/CustomTextViewFilter" />
 
-            <View
-                style="@style/Line"
+            <View style="@style/Line"
                 android:layout_marginStart="20dp"
-                android:background="#888" />
+                android:background="#888"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/jobTypeRecyclerView"
@@ -67,15 +64,14 @@
                 android:scrollbars="none" />
 
             <TextView
-                style="@style/CustomTextViewFilter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/experience_level" />
+                android:text="@string/experience_level"
+                style="@style/CustomTextViewFilter"/>
 
-            <View
-                style="@style/Line"
+            <View style="@style/Line"
                 android:layout_marginStart="20dp"
-                android:background="#888" />
+                android:background="#888"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/experienceRecyclerView"
@@ -86,15 +82,14 @@
                 android:scrollbars="none" />
 
             <TextView
-                style="@style/CustomTextViewFilter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/client_history" />
+                android:text="@string/client_history"
+                style="@style/CustomTextViewFilter"/>
 
-            <View
-                style="@style/Line"
+            <View style="@style/Line"
                 android:layout_marginStart="20dp"
-                android:background="#888" />
+                android:background="#888"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/clientHistoryRecyclerView"
@@ -106,15 +101,14 @@
 
 
             <TextView
-                style="@style/CustomTextViewFilter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/number_of_proposals" />
+                android:text="@string/number_of_proposals"
+                style="@style/CustomTextViewFilter"/>
 
-            <View
-                style="@style/Line"
+            <View style="@style/Line"
                 android:layout_marginStart="20dp"
-                android:background="#888" />
+                android:background="#888"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/numberOfProposalsRecyclerView"
@@ -125,15 +119,14 @@
                 android:scrollbars="none" />
 
             <TextView
-                style="@style/CustomTextViewFilter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/budget" />
+                android:text="@string/budget"
+                style="@style/CustomTextViewFilter"/>
 
-            <View
-                style="@style/Line"
+            <View style="@style/Line"
                 android:layout_marginStart="20dp"
-                android:background="#888" />
+                android:background="#888"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/budgetRecyclerView"
@@ -144,15 +137,14 @@
                 android:scrollbars="none" />
 
             <TextView
-                style="@style/CustomTextViewFilter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/client_info" />
+                android:text="@string/client_info"
+                style="@style/CustomTextViewFilter"/>
 
-            <View
-                style="@style/Line"
+            <View style="@style/Line"
                 android:layout_marginStart="20dp"
-                android:background="#888" />
+                android:background="#888"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/clientInfoRecyclerView"
@@ -163,15 +155,14 @@
                 android:scrollbars="none" />
 
             <TextView
-                style="@style/CustomTextViewFilter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/hours_per_week" />
+                android:text="@string/hours_per_week"
+                style="@style/CustomTextViewFilter"/>
 
-            <View
-                style="@style/Line"
+            <View style="@style/Line"
                 android:layout_marginStart="20dp"
-                android:background="#888" />
+                android:background="#888"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/hoursPerWeekRecyclerView"
@@ -182,15 +173,14 @@
                 android:scrollbars="none" />
 
             <TextView
-                style="@style/CustomTextViewFilter"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/client_location" />
+                android:text="@string/client_location"
+                style="@style/CustomTextViewFilter"/>
 
-            <View
-                style="@style/Line"
+            <View style="@style/Line"
                 android:layout_marginStart="20dp"
-                android:background="#888" />
+                android:background="#888"/>
 
         </LinearLayout>
 
@@ -201,31 +191,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:orientation="horizontal">
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="0dp"
-            android:layout_height="65dp"
-            android:layout_weight="1"
-            android:text="Clear"
-            android:textAllCaps="false"
-            android:textColor="#000"
-            android:textSize="18sp"
-            app:backgroundTint="#F7F7F7"
-            app:cornerRadius="0dp"
-            app:strokeColor="#888"
-            android:insetTop="0dp"
-            android:insetBottom="0dp"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="0dp"
-            android:layout_height="65dp"
-            android:layout_weight="1"
-            android:text="Track"
-            android:insetTop="0dp"
-            android:insetBottom="0dp"
-            android:textAllCaps="false"
-            android:textSize="18sp"
-            app:cornerRadius="0dp" />
 
     </LinearLayout>
 
