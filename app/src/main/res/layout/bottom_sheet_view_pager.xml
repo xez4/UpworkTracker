@@ -36,15 +36,28 @@
 
         <com.google.android.material.button.MaterialButton
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
             android:layout_weight="1"
-            android:text="Clear" />
+            android:text="Clear"
+            android:textAllCaps="false"
+            android:textColor="#000"
+            android:textSize="18sp"
+            android:insetBottom="0dp"
+            android:insetTop="0dp"
+            app:backgroundTint="#F7F7F7"
+            app:cornerRadius="0dp"
+            app:strokeColor="#888" />
 
         <com.google.android.material.button.MaterialButton
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
             android:layout_weight="1"
-            android:text="Track" />
+            android:text="Track"
+            android:insetBottom="0dp"
+            android:insetTop="0dp"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            app:cornerRadius="0dp" />
 
     </LinearLayout>
 
