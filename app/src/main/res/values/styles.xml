@@ -3,7 +3,7 @@
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <item name="colorPrimaryDark">@color/concrete</item>
         <item name="colorPrimary">@color/lima</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/lima</item>
     </style>
 
     <style name="CustomTextViewCategory">

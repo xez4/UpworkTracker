@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
     android:overScrollMode="never">
 
     <SearchView
@@ -9,14 +10,11 @@
         android:layout_height="40dp"
         android:searchIcon="@drawable/ic_search_green_24dp" />
 
-    <View
-        style="@style/Line"
-        android:layout_marginTop="40dp" />
+    <View style="@style/Line" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:overScrollMode="never">
 
         <LinearLayout
@@ -172,4 +170,4 @@
 
     </androidx.core.widget.NestedScrollView>
 
-</FrameLayout>
+</LinearLayout>

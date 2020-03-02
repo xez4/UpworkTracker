@@ -16,7 +16,6 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.bottom_sheet_view_pager.*
 
-
 class BottomSheet : BottomSheetDialogFragment() {
 
     override fun onCreateView(

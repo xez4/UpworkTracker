@@ -31,8 +31,6 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
 
         setContentView(R.layout.activity_advert)
 
-        advertActivityProgressBar.visibility = ProgressBar.VISIBLE
-
         advertPresenter.isFirstRun()
 
         setToolbar()
@@ -49,11 +47,13 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
     }
 
     override fun hideProgress() {
-        if (advertActivityProgressBar != null) advertActivityProgressBar.visibility =
-                ProgressBar.INVISIBLE
+        horizontalProgressBar.let {
+            horizontalProgressBar.visibility = ProgressBar.INVISIBLE
+        }
     }
 
     override fun refresh() {
+        horizontalProgressBar.visibility = ProgressBar.VISIBLE
         advertPresenter.getAdvert()
     }
 
@@ -63,7 +63,7 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
     }
 
     override fun setToolbar() {
-        setSupportActionBar(toolbar)
+        setSupportActionBar(appbarMaterialToolbar)
         title = ""
     }
 

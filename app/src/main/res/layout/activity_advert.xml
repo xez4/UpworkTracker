@@ -8,14 +8,9 @@
     android:orientation="vertical"
     tools:context=".adverts.AdvertActivity">
 
-    <include layout="@layout/toolbar" />
-
-    <ProgressBar
-        android:id="@+id/advertActivityProgressBar"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_gravity="center"
-        android:indeterminate="true" />
+    <include
+        android:id="@+id/toolbarLayout"
+        layout="@layout/toolbar" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerAdvertsCards"
@@ -24,5 +19,14 @@
         android:overScrollMode="never"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:listitem="@layout/adverts_card" />
+
+    <ProgressBar
+        android:id="@+id/horizontalProgressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:indeterminate="true"
+        app:layout_anchor="@id/toolbarLayout"
+        app:layout_anchorGravity="bottom" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
