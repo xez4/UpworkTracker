@@ -6,6 +6,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.ProgressBar
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.android.upworktracker.R
 import com.android.upworktracker.bottom_sheet_filter.BottomSheet
 import com.android.upworktracker.intro.IntroActivity
@@ -35,6 +36,8 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
 
         setToolbar()
 
+        hideProgressBarOnScroll()
+
         refresh()
 
         filterButton.setOnClickListener {
@@ -44,6 +47,15 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
                 bottomSheet.dialog?.show()
             }
         }
+    }
+
+    override fun hideProgressBarOnScroll() {
+        recyclerAdvertsCards.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                hideProgress()
+            }
+        })
     }
 
     override fun hideProgress() {

@@ -11,4 +11,5 @@ interface AdvertView : MvpView {
     fun initAdapter(advertAdapter: AdvertAdapter)
     fun finishAdvertActivity()
     fun hideProgress()
+    fun hideProgressBarOnScroll()
 }
