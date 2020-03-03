@@ -5,15 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.android.upworktracker.R
 
-class CategoryAdapter(private val dataset: ArrayList<String>) : RecyclerView.Adapter<CategoryViewHolder>() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
-        val view = LayoutInflater.from(parent.context)
-                .inflate(R.layout.category_item, parent, false)
+class CategoryAdapter(private val dataset: List<Pair<String, List<String>>>) : RecyclerView.Adapter<CategoryViewHolder>() {
 
-        return CategoryViewHolder(
-                view
-        )
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
+            CategoryViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.category_title_list, parent, false))
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         holder.bind(dataset[position])

@@ -8,8 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.android.upworktracker.R
-import com.android.upworktracker.bottom_sheet_filter.view_pager.CategoryFragment
-import com.android.upworktracker.bottom_sheet_filter.view_pager.FilterFragment
 import com.android.upworktracker.bottom_sheet_filter.view_pager.ViewPagerFilterAdapter
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
@@ -29,9 +27,6 @@ class BottomSheet : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        FilterFragment.newInstance()
-        CategoryFragment.newInstance()
 
         bottomSheetViewPager.adapter = ViewPagerFilterAdapter(this)
         bottomSheetViewPager.offscreenPageLimit = 2

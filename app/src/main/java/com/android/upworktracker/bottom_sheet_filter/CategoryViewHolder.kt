@@ -1,18 +1,21 @@
 package com.android.upworktracker.bottom_sheet_filter
 
 import android.view.View
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.category_item.view.*
+import com.android.upworktracker.bottom_sheet_filter.inner_list.CategoryListAdapter
+import kotlinx.android.synthetic.main.category_title_list.view.*
 
 class CategoryViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
-    fun bind(str: String) {
-        view.textView.text = str
+    fun bind(str: Pair<String, List<String>>) = with(view) {
 
-        view.setOnClickListener {
+        categoryGroupRecyclerView.adapter = CategoryListAdapter(str.second)
+        categoryGroupRecyclerView.layoutManager = LinearLayoutManager(view.context)
 
-            view.checkbox.isChecked = !view.checkbox.isChecked
-
+        titleCheckbox.text = str.first
+        setOnClickListener {
+            titleCheckbox.isChecked = !titleCheckbox.isChecked
         }
     }
 

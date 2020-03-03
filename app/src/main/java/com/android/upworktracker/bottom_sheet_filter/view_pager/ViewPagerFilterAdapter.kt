@@ -11,8 +11,8 @@ class ViewPagerFilterAdapter(fragment: Fragment) : FragmentStateAdapter(fragment
 
     override fun createFragment(position: Int): Fragment {
         return when (position) {
-            0 -> FilterFragment()
-            else -> CategoryFragment()
+            0 -> FilterFragment.newInstance()
+            else -> CategoryFragment.newInstance()
         }
     }
 

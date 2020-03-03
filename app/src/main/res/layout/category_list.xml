@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
@@ -12,162 +13,11 @@
 
     <View style="@style/Line" />
 
-    <androidx.core.widget.NestedScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categoryListRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:overScrollMode="never">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                style="@style/CustomTextViewCategory"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/accounting_amp_consulting" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/accountingAndConsultingRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:overScrollMode="never" />
-
-            <TextView
-                style="@style/CustomTextViewCategory"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/admin_support" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/adminSupportRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:overScrollMode="never" />
-
-            <TextView
-                style="@style/CustomTextViewCategory"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/customer_service" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/customerServiceRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:overScrollMode="never" />
-
-            <TextView
-                style="@style/CustomTextViewCategory"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/data_science_amp_analytics" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/dataScienceAndAnalyticsRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:overScrollMode="never" />
-
-            <TextView
-                style="@style/CustomTextViewCategory"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/design_amp_creative" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/designAndCreativeRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:overScrollMode="never" />
-
-            <TextView
-                style="@style/CustomTextViewCategory"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/engineering_amp_architecture" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/engineeringAndArchitectureRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:overScrollMode="never" />
-
-            <TextView
-                style="@style/CustomTextViewCategory"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/it_amp_networking" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/itAndNetworkingRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:overScrollMode="never" />
-
-            <TextView
-                style="@style/CustomTextViewCategory"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/legal" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/legalRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:overScrollMode="never" />
-
-            <TextView
-                style="@style/CustomTextViewCategory"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/sales_amp_marketing" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/salesAndMarketingRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:overScrollMode="never" />
-
-            <TextView
-                style="@style/CustomTextViewCategory"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/translation" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/translationRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:overScrollMode="never" />
-
-            <TextView
-                style="@style/CustomTextViewCategory"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/web_mobile_amp_software_dev" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/webMobileAndSoftwareDevRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:overScrollMode="never" />
-
-            <TextView
-                style="@style/CustomTextViewCategory"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/writing" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/writingRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:overScrollMode="never" />
-
-        </LinearLayout>
-
-    </androidx.core.widget.NestedScrollView>
+        android:overScrollMode="never"
+        tools:listitem="@layout/category_title_list" />
 
 </LinearLayout>

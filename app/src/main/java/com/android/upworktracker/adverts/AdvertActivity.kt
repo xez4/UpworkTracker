@@ -49,6 +49,11 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        bottomSheet.dialog?.hide()
+    }
+
     override fun hideProgressBarOnScroll() {
         recyclerAdvertsCards.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {

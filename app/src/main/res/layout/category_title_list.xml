@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/greyNickel"
     android:orientation="vertical">
 
     <com.google.android.material.checkbox.MaterialCheckBox
-        android:id="@+id/checkbox"
+        android:id="@+id/titleCheckbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -16,6 +18,12 @@
         android:layoutDirection="rtl"
         android:textAlignment="textStart" />
 
-    <View style="@style/Line" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categoryGroupRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:overScrollMode="never"
+        tools:listitem="@layout/checkbox_item" />
 
 </LinearLayout>
