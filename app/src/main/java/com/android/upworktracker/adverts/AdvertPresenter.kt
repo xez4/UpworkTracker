@@ -9,10 +9,8 @@ import com.android.upworktracker.network.services.UpworkService
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import moxy.InjectViewState
 import moxy.MvpPresenter
 
-@InjectViewState
 class AdvertPresenter(
         private val upworkService: UpworkService,
         private val sharedPreferences: SharedPreferences

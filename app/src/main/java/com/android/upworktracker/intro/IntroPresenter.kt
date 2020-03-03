@@ -3,10 +3,8 @@ package com.android.upworktracker.intro
 import androidx.viewpager2.widget.ViewPager2
 import com.airbnb.lottie.LottieAnimationView
 import com.android.upworktracker.R
-import moxy.InjectViewState
 import moxy.MvpPresenter
 
-@InjectViewState
 class IntroPresenter : MvpPresenter<IntroView>() {
 
     fun notifyNextButtonClick(viewPager: ViewPager2, size: Int) {
