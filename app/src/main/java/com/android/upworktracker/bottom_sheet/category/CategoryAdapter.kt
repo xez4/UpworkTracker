@@ -4,8 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.android.upworktracker.R
+import com.android.upworktracker.entity.Category
 
-class CategoryAdapter(private val dataset: List<Pair<String, List<String>>>) : RecyclerView.Adapter<CategoryViewHolder>() {
+class CategoryAdapter : RecyclerView.Adapter<CategoryViewHolder>() {
+
+    private val category = mutableListOf<Category>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         CategoryViewHolder(
@@ -13,8 +16,15 @@ class CategoryAdapter(private val dataset: List<Pair<String, List<String>>>) : R
         )
 
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
-        holder.bind(dataset[position])
+        holder.bind(category[position])
     }
 
-    override fun getItemCount(): Int = dataset.size
+    override fun getItemCount(): Int = category.size
+
+    fun setData(items: MutableList<Category>) {
+        category.clear()
+        category.addAll(items)
+        notifyDataSetChanged()
+    }
+
 }
