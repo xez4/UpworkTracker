@@ -34,13 +34,6 @@
                 android:nestedScrollingEnabled="false"
                 android:scrollbars="none" />
 
-            <TextView
-                android:id="@+id/category"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Category"
-                style="@style/CustomTextViewFilter"/>
-
             <View style="@style/Line"
                 android:layout_marginStart="20dp"
                 android:background="#888"/>
