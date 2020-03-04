@@ -3,7 +3,6 @@ package com.android.upworktracker.adverts
 import android.content.SharedPreferences
 import android.util.Log
 import com.android.upworktracker.R
-import com.android.upworktracker.entity.TrackerRequest
 import com.android.upworktracker.entity.TrackerResponse
 import com.android.upworktracker.network.services.UpworkService
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -12,8 +11,8 @@ import io.reactivex.schedulers.Schedulers
 import moxy.MvpPresenter
 
 class AdvertPresenter(
-        private val upworkService: UpworkService,
-        private val sharedPreferences: SharedPreferences
+    private val upworkService: UpworkService,
+    private val sharedPreferences: SharedPreferences
 ) : MvpPresenter<AdvertView>() {
 
     private val compositeDisposable = CompositeDisposable()
@@ -22,23 +21,22 @@ class AdvertPresenter(
 
     fun getAdvert() {
         val disposable =
-                upworkService.post(TrackerRequest())
-                        .subscribeOn(Schedulers.io())
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .subscribe(
-                                {
-                                    loadData(it)
-                                    viewState.hideProgress()
-                                },
-                                { Log.e("response", "Error: getAdvert()") }
-                        )
+            upworkService.getFromDb()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(
+                    {
+                        Log.e("getdata from test db", it.toString())
+                    },
+                    { it.printStackTrace() }
+                )
 
         compositeDisposable.add(disposable)
     }
 
     fun isFirstRun() {
         val isFirstRun =
-                sharedPreferences.getBoolean("isFirstRun", true)
+            sharedPreferences.getBoolean("isFirstRun", true)
         if (isFirstRun) {
             viewState.finishAdvertActivity()
         }
