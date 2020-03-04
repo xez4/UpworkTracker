@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.upworktracker.R
 
 class CategoryListAdapter(private val dataset: List<String>) : RecyclerView.Adapter<CategoryListViewHolder>() {
+
+    var check = false
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
             CategoryListViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.checkbox_item, parent, false))
 
@@ -13,5 +16,10 @@ class CategoryListAdapter(private val dataset: List<String>) : RecyclerView.Adap
 
     override fun onBindViewHolder(holder: CategoryListViewHolder, position: Int) {
         holder.bind(dataset[position])
+    }
+
+    fun checkAll(){
+        check = true
+        notifyDataSetChanged()
     }
 }

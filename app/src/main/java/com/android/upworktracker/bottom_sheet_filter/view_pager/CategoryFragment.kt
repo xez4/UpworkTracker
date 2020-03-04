@@ -1,5 +1,6 @@
 package com.android.upworktracker.bottom_sheet_filter.view_pager
 
+import android.os.AsyncTask
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,8 @@ import com.android.upworktracker.bottom_sheet_filter.CategoryAdapter
 import kotlinx.android.synthetic.main.category_list.*
 
 class CategoryFragment : Fragment() {
+
+    lateinit var adapter: CategoryAdapter
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -138,8 +141,14 @@ class CategoryFragment : Fragment() {
                 )
         )
 
-        categoryListRecyclerView.adapter = CategoryAdapter(database)
+        adapter = CategoryAdapter(database)
+        categoryListRecyclerView.adapter = adapter
         categoryListRecyclerView.layoutManager = LinearLayoutManager(view.context)
+
+    }
+
+    fun clearCheckboxes() {
+        adapter.notifyDataSetChanged()
     }
 
 }
