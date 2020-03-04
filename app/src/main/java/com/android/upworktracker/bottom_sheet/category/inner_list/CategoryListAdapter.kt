@@ -1,4 +1,4 @@
-package com.android.upworktracker.bottom_sheet_filter.inner_list
+package com.android.upworktracker.bottom_sheet.category.inner_list
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

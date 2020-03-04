@@ -1,7 +1,9 @@
-package com.android.upworktracker.bottom_sheet_filter.view_pager
+package com.android.upworktracker.bottom_sheet
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import com.android.upworktracker.bottom_sheet.category.CategoryFragment
+import com.android.upworktracker.bottom_sheet.filter.FilterFragment
 
 class ViewPagerFilterAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 

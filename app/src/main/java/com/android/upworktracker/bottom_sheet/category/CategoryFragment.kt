@@ -1,6 +1,5 @@
-package com.android.upworktracker.bottom_sheet_filter.view_pager
+package com.android.upworktracker.bottom_sheet.category
 
-import android.os.AsyncTask
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.upworktracker.R
-import com.android.upworktracker.bottom_sheet_filter.CategoryAdapter
 import kotlinx.android.synthetic.main.category_list.*
 
 class CategoryFragment : Fragment() {
@@ -23,7 +21,8 @@ class CategoryFragment : Fragment() {
     }
 
     companion object {
-        fun newInstance() = CategoryFragment()
+            fun newInstance() =
+                    CategoryFragment()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -141,7 +140,10 @@ class CategoryFragment : Fragment() {
                 )
         )
 
-        adapter = CategoryAdapter(database)
+            adapter =
+                    CategoryAdapter(
+                            database
+                    )
         categoryListRecyclerView.adapter = adapter
         categoryListRecyclerView.layoutManager = LinearLayoutManager(view.context)
 
