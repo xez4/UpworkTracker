@@ -28,7 +28,8 @@ class BottomSheet : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        bottomSheetViewPager.adapter = ViewPagerFilterAdapter(this)
+        val pagerAdaper = ViewPagerFilterAdapter(this)
+        bottomSheetViewPager.adapter = pagerAdaper
         bottomSheetViewPager.offscreenPageLimit = 2
 
         TabLayoutMediator(viewPagerTabLayout, bottomSheetViewPager) { tab, position ->
@@ -37,6 +38,15 @@ class BottomSheet : BottomSheetDialogFragment() {
                 else -> "category"
             }
         }.attach()
+
+        clearButton.setOnClickListener {
+            pagerAdaper.apply {
+                when(bottomSheetViewPager.currentItem){
+                    0 -> filterFragment.clearCheckboxes()
+                    1 -> categoryFragment.clearCheckboxes()
+                }
+            }
+        }
     }
 
     override fun onStart() {

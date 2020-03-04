@@ -37,6 +37,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/clearButton"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
@@ -50,6 +51,7 @@
             app:cornerRadius="0dp" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/trackButton"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
