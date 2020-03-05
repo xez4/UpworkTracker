@@ -7,5 +7,5 @@ data class DatabaseResponse(
         @SerializedName("category")
         val category: MutableList<Category>,
         @SerializedName("filter")
-    val filter: List<Filter>
+        val filter: MutableList<Filter>
 )

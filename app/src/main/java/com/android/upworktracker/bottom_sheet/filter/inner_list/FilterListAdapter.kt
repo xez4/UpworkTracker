@@ -4,15 +4,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.android.upworktracker.R
+import com.android.upworktracker.entity.Type
 
-class FilterListAdapter(private val dataset: List<String>) :
-    RecyclerView.Adapter<FilterListViewHolder>() {
+class FilterListAdapter(private val dataset: List<Type>) : RecyclerView.Adapter<FilterListViewHolder>() {
+
     var check = false
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        FilterListViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.checkbox_item, parent, false)
-        )
+            FilterListViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.checkbox_item, parent, false))
 
     override fun getItemCount() = dataset.size
 

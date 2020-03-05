@@ -11,7 +11,7 @@ class CategoryPresenter(private val repositoryService: RepositoryService) : MvpP
 
     private val categoryAdapter = CategoryAdapter()
 
-    fun loadBData() { // FIXME
+    fun loadCategoryData() {
         val bag = repositoryService.getRepositoryData()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

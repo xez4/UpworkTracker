@@ -20,8 +20,6 @@ class CategoryFragment : MvpAppCompatFragment(), CategoryView {
     @ProvidePresenter
     fun provideCategoryPresenter() = get<CategoryPresenter>()
 
-//    lateinit var adapter: CategoryAdapter
-
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
@@ -36,11 +34,11 @@ class CategoryFragment : MvpAppCompatFragment(), CategoryView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        categoryPresenter.loadBData()
+        categoryPresenter.loadCategoryData()
     }
 
     fun clearCheckboxes() {
-//        adapter.notifyDataSetChanged()
+//     adapter.notifyDataSetChanged()
     }
 
     override fun initAdapter(adapter: CategoryAdapter) {

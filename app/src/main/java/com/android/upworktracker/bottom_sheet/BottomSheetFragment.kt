@@ -28,7 +28,7 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val pagerAdaper =
-            ViewPagerFilterAdapter(this)
+            ViewPagerAdapter(this)
         bottomSheetViewPager.adapter = pagerAdaper
         bottomSheetViewPager.offscreenPageLimit = 2
 
