@@ -1,4 +1,4 @@
-package com.android.upworktracker.bottom_sheet_filter
+package com.android.upworktracker.bottom_sheet
 
 import android.content.DialogInterface
 import android.graphics.Color
@@ -8,13 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.android.upworktracker.R
-import com.android.upworktracker.bottom_sheet_filter.view_pager.ViewPagerFilterAdapter
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.bottom_sheet_view_pager.*
 
-class BottomSheet : BottomSheetDialogFragment() {
+class BottomSheetFragment : BottomSheetDialogFragment() {
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -28,7 +27,8 @@ class BottomSheet : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val pagerAdaper = ViewPagerFilterAdapter(this)
+        val pagerAdaper =
+            ViewPagerFilterAdapter(this)
         bottomSheetViewPager.adapter = pagerAdaper
         bottomSheetViewPager.offscreenPageLimit = 2
 

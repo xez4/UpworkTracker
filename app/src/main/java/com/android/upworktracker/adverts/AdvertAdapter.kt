@@ -11,13 +11,9 @@ class AdvertAdapter : RecyclerView.Adapter<AdvertViewHolder>() {
     private val adverts = mutableListOf<TrackerResponse>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-            AdvertViewHolder(
-                    LayoutInflater.from(parent.context).inflate(
-                            R.layout.adverts_card,
-                            parent,
-                            false
-                    )
-            )
+        AdvertViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.adverts_card, parent, false)
+        )
 
     override fun onBindViewHolder(holder: AdvertViewHolder, position: Int) =
             holder.bind(adverts[position])

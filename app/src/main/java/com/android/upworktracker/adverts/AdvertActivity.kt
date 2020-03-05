@@ -8,7 +8,7 @@ import android.widget.ProgressBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.upworktracker.R
-import com.android.upworktracker.bottom_sheet_filter.BottomSheet
+import com.android.upworktracker.bottom_sheet.BottomSheetFragment
 import com.android.upworktracker.intro.IntroActivity
 import kotlinx.android.synthetic.main.activity_advert.*
 import kotlinx.android.synthetic.main.toolbar.*
@@ -25,7 +25,7 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
     @ProvidePresenter
     fun provideAdvertsPresenter() = get<AdvertPresenter>()
 
-    private val bottomSheet = BottomSheet()
+    private val bottomSheet = BottomSheetFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
