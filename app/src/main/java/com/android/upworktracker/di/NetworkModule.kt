@@ -8,8 +8,8 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 val networkModule = module {
-        single { provideRetrofit() }
-        single { provideRepositoryRetrofit() }
+    single { provideRetrofit() }
+    single { provideRepositoryRetrofit() }
 }
 
 fun provideRetrofit(): UpworkService = Retrofit.Builder()

@@ -36,6 +36,8 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
 
         setToolbar()
 
+        advertPresenter.getDataToRepoFromAPI()
+
         hideProgressBarOnScroll()
 
         refresh()
