@@ -73,7 +73,7 @@ class FilterFragment : Fragment() {
     }
 
     fun clearCheckboxes() {
-        adapter.notifyDataSetChanged()
+      //  adapter.notifyDataSetChanged()
     }
 
 }

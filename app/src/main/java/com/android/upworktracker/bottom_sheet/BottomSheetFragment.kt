@@ -56,7 +56,6 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
             idBottomSheet.layoutParams.height = ViewGroup.LayoutParams.MATCH_PARENT
         }
 
-
         val view = view
         view?.post {
             val parent = view.parent as View

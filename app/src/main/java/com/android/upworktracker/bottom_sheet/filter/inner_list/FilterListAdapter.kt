@@ -7,7 +7,6 @@ import com.android.upworktracker.R
 
 class FilterListAdapter(private val dataset: List<String>) :
     RecyclerView.Adapter<FilterListViewHolder>() {
-    var check = false
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         FilterListViewHolder(
@@ -20,8 +19,4 @@ class FilterListAdapter(private val dataset: List<String>) :
         holder.bind(dataset[position])
     }
 
-    fun checkAll() {
-        check = true
-        notifyDataSetChanged()
-    }
 }

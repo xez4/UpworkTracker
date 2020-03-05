@@ -8,8 +8,6 @@ import com.android.upworktracker.entity.Description
 
 class CategoryListAdapter(private val dataset: List<Description>) : RecyclerView.Adapter<CategoryListViewHolder>() {
 
-    var check = false
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
             CategoryListViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.checkbox_item, parent, false))
 
