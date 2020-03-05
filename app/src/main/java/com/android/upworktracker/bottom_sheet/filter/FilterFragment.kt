@@ -23,24 +23,24 @@ class FilterFragment : MvpAppCompatFragment(), FilterView {
     lateinit var adapter: FilterAdapter
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.filter_list, container, false)
     }
 
     companion object {
         fun newInstance() =
-                FilterFragment()
+            FilterFragment()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        filterPresenter.loadFilterData()
+        filterPresenter.getDataFromRepo()
     }
 
     fun clearCheckboxes() {
-        adapter.notifyDataSetChanged()
+//        adapter.notifyDataSetChanged()
     }
 
     override fun initAdapter(adapter: FilterAdapter) {

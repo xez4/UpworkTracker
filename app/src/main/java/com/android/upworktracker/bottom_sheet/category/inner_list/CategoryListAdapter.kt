@@ -23,4 +23,5 @@ class CategoryListAdapter(private val dataset: List<Description>) : RecyclerView
         check = true
         notifyDataSetChanged()
     }
+
 }
