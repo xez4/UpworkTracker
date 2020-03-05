@@ -1,24 +1,23 @@
 package com.android.upworktracker.bottom_sheet.category
 
+import com.android.upworktracker.bottom_sheet.Repository
 import com.android.upworktracker.entity.Category
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 import moxy.MvpPresenter
 
-class CategoryPresenter(private val repo: CategoryRepo) :
-    MvpPresenter<CategoryView>() {
+class CategoryPresenter(private val repo: Repository) : MvpPresenter<CategoryView>() {
 
     private val categoryList = mutableListOf<Category>()
     private val categoryAdapter = CategoryAdapter()
 
     fun getDataFromRepo() {
-        val bag = repo.getCategoryList()
-            .subscribeOn(Schedulers.newThread())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe(
-                { loadData(it) },
-                { it.printStackTrace() }
-            )
+//        val bag = repo.getCategoryList()
+//                .subscribeOn(Schedulers.newThread())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .subscribe(
+//                        { loadData(it) },
+//                        { it.printStackTrace() }
+//                )
+        loadData(repo.getCategoryContent())
     }
 
     private fun loadData(item: List<Category>) {
