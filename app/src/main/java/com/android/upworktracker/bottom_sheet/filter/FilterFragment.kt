@@ -44,4 +44,8 @@ class FilterFragment : MvpAppCompatFragment(), FilterView {
         filterListRecyclerView.adapter = adapter
         filterListRecyclerView.layoutManager = LinearLayoutManager(context)
     }
+
+    fun clearCheckboxes(){
+
+    }
 }

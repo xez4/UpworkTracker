@@ -7,7 +7,7 @@ import com.android.upworktracker.R
 import com.android.upworktracker.entity.Type
 
 
-class FilterListAdapter(private val dataset: List<String>) :
+class FilterListAdapter(private val dataset: List<Type>) :
     RecyclerView.Adapter<FilterListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =

@@ -8,13 +8,11 @@ import kotlinx.android.synthetic.main.checkbox_item.view.*
 
 class FilterListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-    fun bind(s: String) = with(itemView) {
-        checkbox.text = s
+    fun bind(type: Type) = with(itemView) {
+        checkbox.text = type.name
 
         setOnClickListener {
             checkbox.isChecked = !checkbox.isChecked
         }
     }
-
 }
-
