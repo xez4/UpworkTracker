@@ -38,13 +38,14 @@ class CategoryFragment : MvpAppCompatFragment(), CategoryView {
         categoryPresenter.getDataFromRepo()
     }
 
-    fun clearCheckboxes() {
-//     adapter.notifyDataSetChanged()
-    }
 
     override fun initAdapter(adapter: CategoryAdapter) {
         categoryListRecyclerView.adapter = adapter
         categoryListRecyclerView.layoutManager = LinearLayoutManager(context)
+    }
+
+    fun clearCheckboxes(){
+        categoryPresenter.clearCheckboxes()
     }
 
 }

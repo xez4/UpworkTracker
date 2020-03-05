@@ -11,6 +11,7 @@ class FilterPresenter(
     private val repo: FilterRepo
 ) : MvpPresenter<FilterView>() {
 
+    private val filterList = mutableListOf<Filter>()
     private val filterAdapter = FilterAdapter()
 
 //    fun loadFilterData() {
@@ -37,6 +38,14 @@ class FilterPresenter(
 
     private fun loadData(item: List<Filter>) {
         viewState.initAdapter(filterAdapter)
-        filterAdapter.setData(item.toMutableList())
+        filterList.addAll(item.toMutableList())
+        filterAdapter.setData(filterList)
+    }
+
+    fun clearCheckboxes(){
+        for (filter in filterList)
+            for (filter_item in filter.type)
+                filter_item.checkedState = false
+        filterAdapter.notifyDataSetChanged()
     }
 }

@@ -8,6 +8,7 @@ import moxy.MvpPresenter
 class CategoryPresenter(private val repo: CategoryRepo) :
     MvpPresenter<CategoryView>() {
 
+    private val categoryList = mutableListOf<Category>()
     private val categoryAdapter = CategoryAdapter()
 
     fun getDataFromRepo() {
@@ -22,7 +23,17 @@ class CategoryPresenter(private val repo: CategoryRepo) :
 
     private fun loadData(item: List<Category>) {
         viewState.initAdapter(categoryAdapter)
-        categoryAdapter.setData(item.toMutableList())
+        categoryList.addAll(item.toMutableList())
+        categoryAdapter.setData(categoryList)
+    }
+
+    fun clearCheckboxes(){
+        for (category in categoryList){
+            category.checkedState = false
+            for (description in category.description)
+                description.checkedState = false
+        }
+        categoryAdapter.notifyDataSetChanged()
     }
 
 }

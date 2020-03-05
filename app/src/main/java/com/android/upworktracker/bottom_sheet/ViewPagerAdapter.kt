@@ -7,16 +7,14 @@ import com.android.upworktracker.bottom_sheet.filter.FilterFragment
 
 class ViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
-    lateinit var filterFragment: FilterFragment
-    lateinit var categoryFragment: CategoryFragment
+    val filterFragment = FilterFragment.newInstance()
+    val categoryFragment = CategoryFragment.newInstance()
 
     private val pageCount = 2
 
     override fun getItemCount() = pageCount
 
     override fun createFragment(position: Int): Fragment {
-        filterFragment = FilterFragment.newInstance()
-        categoryFragment = CategoryFragment.newInstance()
         return when (position) {
             0 -> filterFragment
             else -> categoryFragment
