@@ -18,8 +18,4 @@ class CategoryListAdapter(private val dataset: List<String>) : RecyclerView.Adap
         holder.bind(dataset[position])
     }
 
-    fun checkAll(){
-        check = true
-        notifyDataSetChanged()
-    }
 }

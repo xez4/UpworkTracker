@@ -29,35 +29,37 @@ class FilterFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val database = arrayListOf(
-                "Soring By" to listOf("Newest", "Relevance", "Client spend", "Client rating"),
-                "Job Type" to listOf("Any Job Type", "Hourly", "Fixed Price"),
-                "Experience Level" to listOf("Any experience level",
-                        "Entry Level - $",
-                        "Intermediate - $$",
-                        "Master - $$$"),
-                "Client History" to listOf("Any client history", "No hires", "1 to 9 hires", "10+ hires"),
-                "Number of Proposals" to listOf("Any Number of Proposals",
-                        "Less than 5",
-                        "5 to 10",
-                        "10 to 15",
-                        "15 to 20",
-                        "20 to 50"),
-                "Budget" to listOf("Any Budget",
-                        "Less than $100",
-                        "$100 - $500",
-                        "$500 - $1k",
-                        "$1k - $5k",
-                        "$5k+"),
-                "Client Info" to listOf("Payment Verified"),
-                "Hours Per Week" to listOf("Any Hours Per Week", "Less than 30 hrs/week", "More than 30 hrs/week"))
+            "Soring By" to listOf("Newest", "Relevance", "Client spend", "Client rating"),
+            "Job Type" to listOf("Any Job Type", "Hourly", "Fixed Price"),
+            "Experience Level" to listOf("Any experience level",
+                "Entry Level - $",
+                "Intermediate - $$",
+                "Master - $$$"),
+            "Client History" to listOf("Any client history", "No hires", "1 to 9 hires", "10+ hires"),
+            "Number of Proposals" to listOf("Any Number of Proposals",
+                "Less than 5",
+                "5 to 10",
+                "10 to 15",
+                "15 to 20",
+                "20 to 50"),
+            "Budget" to listOf("Any Budget",
+                "Less than $100",
+                "$100 - $500",
+                "$500 - $1k",
+                "$1k - $5k",
+                "$5k+"),
+            "Client Info" to listOf("Payment Verified"),
+            "Hours Per Week" to listOf("Any Hours Per Week", "Less than 30 hrs/week", "More than 30 hrs/week"))
 
         adapter = FilterAdapter(database)
+
         filterListRecyclerView.adapter = adapter
         filterListRecyclerView.layoutManager = LinearLayoutManager(view.context)
     }
 
     fun clearCheckboxes() {
-        adapter.notifyDataSetChanged()
+//        adapter = FilterAdapter(database)
+//        filterListRecyclerView.adapter = adapter
     }
 
 }

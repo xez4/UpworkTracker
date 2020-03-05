@@ -20,7 +20,6 @@ class CategoryViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
 
         setOnClickListener {
             titleCheckbox.isChecked = !titleCheckbox.isChecked
-            categoryListAdapter.checkAll()
         }
     }
 
