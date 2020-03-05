@@ -39,12 +39,13 @@ class FilterFragment : MvpAppCompatFragment(), FilterView {
         filterPresenter.getDataFromRepo()
     }
 
-    fun clearCheckboxes() {
-//        adapter.notifyDataSetChanged()
-    }
 
     override fun initAdapter(adapter: FilterAdapter) {
         filterListRecyclerView.adapter = adapter
         filterListRecyclerView.layoutManager = LinearLayoutManager(context)
+    }
+
+    fun clearCheckboxes(){
+
     }
 }
