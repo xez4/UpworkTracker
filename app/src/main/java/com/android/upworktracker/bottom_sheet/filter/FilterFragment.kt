@@ -4,12 +4,21 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.upworktracker.R
 import kotlinx.android.synthetic.main.filter_list.*
+import moxy.MvpAppCompatFragment
+import moxy.presenter.InjectPresenter
+import moxy.presenter.ProvidePresenter
+import org.koin.android.ext.android.get
 
-class FilterFragment : Fragment() {
+class FilterFragment : MvpAppCompatFragment(), FilterView {
+
+    @InjectPresenter
+    lateinit var filterPresenter: FilterPresenter
+
+    @ProvidePresenter
+    fun provideFilterPresenter() = get<FilterPresenter>()
 
     lateinit var adapter: FilterAdapter
 
@@ -27,53 +36,12 @@ class FilterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        filterPresenter.getDataFromRepo()
+    }
 
-        val database = arrayListOf(
-            "Soring By" to listOf("Newest", "Relevance", "Client spend", "Client rating"),
-            "Job Type" to listOf("Any Job Type", "Hourly", "Fixed Price"),
-            "Experience Level" to listOf(
-                "Any experience level",
-                "Entry Level - $",
-                "Intermediate - $$",
-                "Master - $$$"
-            ),
-            "Client History" to listOf(
-                "Any client history",
-                "No hires",
-                "1 to 9 hires",
-                "10+ hires"
-            ),
-            "Number of Proposals" to listOf(
-                "Any Number of Proposals",
-                "Less than 5",
-                "5 to 10",
-                "10 to 15",
-                "15 to 20",
-                "20 to 50"
-            ),
-            "Budget" to listOf(
-                "Any Budget",
-                "Less than $100",
-                "$100 - $500",
-                "$500 - $1k",
-                "$1k - $5k",
-                "$5k+"
-            ),
-            "Client Info" to listOf("Payment Verified"),
-            "Hours Per Week" to listOf(
-                "Any Hours Per Week",
-                "Less than 30 hrs/week",
-                "More than 30 hrs/week"
-            )
-        )
 
-        adapter = FilterAdapter(database)
+    override fun initAdapter(adapter: FilterAdapter) {
         filterListRecyclerView.adapter = adapter
-        filterListRecyclerView.layoutManager = LinearLayoutManager(view.context)
+        filterListRecyclerView.layoutManager = LinearLayoutManager(context)
     }
-
-    fun clearCheckboxes() {
-      //  adapter.notifyDataSetChanged()
-    }
-
 }

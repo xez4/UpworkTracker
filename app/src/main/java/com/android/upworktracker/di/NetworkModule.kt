@@ -19,7 +19,7 @@ fun provideRetrofit(): UpworkService = Retrofit.Builder()
         .build()
         .create(UpworkService::class.java)
 
-fun provideRepositoryRetrofit(): RepositoryService = Retrofit.Builder() // FIXME
+fun provideRepositoryRetrofit(): RepositoryService = Retrofit.Builder()
         .baseUrl("https://my-json-server.typicode.com/")
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

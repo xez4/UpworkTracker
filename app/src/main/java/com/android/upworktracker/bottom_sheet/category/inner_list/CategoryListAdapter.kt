@@ -17,4 +17,5 @@ class CategoryListAdapter(private val dataset: List<Description>) : RecyclerView
         holder.bind(dataset[position])
     }
 
+
 }

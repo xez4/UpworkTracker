@@ -6,5 +6,5 @@ import retrofit2.http.GET
 
 interface RepositoryService {
     @GET("xez4/json-data/db")
-    fun getRepositoryData(): Single<DatabaseResponse> // FIXME
+    fun getRepositoryData(): Single<DatabaseResponse>
 }
