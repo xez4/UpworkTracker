@@ -10,10 +10,5 @@ class FilterListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(type: Type) = with(itemView) {
         checkbox.text = type.name
         checkbox.isChecked = type.checkedState
-
-        setOnClickListener {
-            type.checkedState = !type.checkedState
-            checkbox.isChecked = type.checkedState
-        }
     }
 }

@@ -9,10 +9,5 @@ class CategoryListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
     fun bind(s: Description) = with(itemView) {
         checkbox.text = s.subtitle
         checkbox.isChecked = s.checkedState
-
-        setOnClickListener {
-            s.checkedState = !s.checkedState
-            checkbox.isChecked = s.checkedState
-        }
     }
 }

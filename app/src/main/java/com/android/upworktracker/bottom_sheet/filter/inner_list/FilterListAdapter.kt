@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.android.upworktracker.R
 import com.android.upworktracker.entity.Type
+import kotlinx.android.synthetic.main.checkbox_item.view.*
 
 
 class FilterListAdapter(private val dataset: List<Type>) :
@@ -17,5 +18,10 @@ class FilterListAdapter(private val dataset: List<Type>) :
 
     override fun onBindViewHolder(holder: FilterListViewHolder, position: Int) {
         holder.bind(dataset[position])
+        with(holder.itemView){
+            checkbox.setOnClickListener {
+                dataset[position].checkedState = !dataset[position].checkedState
+            }
+        }
     }
 }

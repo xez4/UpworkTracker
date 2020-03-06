@@ -17,10 +17,6 @@ class FilterViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
 
         filterTitle.text = filter.titleFilter
 
-//        setOnClickListener {
-//            titleCheckbox.isChecked = !titleCheckbox.isChecked
-//            filterListAdapter.checkAll()
-//        }
     }
 
 }
