@@ -34,17 +34,15 @@ class CategoryFragment : MvpAppCompatFragment(), CategoryView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        categoryPresenter.loadCategoryData()
         categoryPresenter.getDataFromRepo()
     }
-
 
     override fun initAdapter(adapter: CategoryAdapter) {
         categoryListRecyclerView.adapter = adapter
         categoryListRecyclerView.layoutManager = LinearLayoutManager(context)
     }
 
-    fun clearCheckboxes(){
+    fun clearCheckboxes() {
         categoryPresenter.clearCheckboxes()
     }
 

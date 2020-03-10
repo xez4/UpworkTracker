@@ -18,4 +18,5 @@ class FilterListAdapter(private val dataset: List<Type>) :
     override fun onBindViewHolder(holder: FilterListViewHolder, position: Int) {
         holder.bind(dataset[position])
     }
+
 }

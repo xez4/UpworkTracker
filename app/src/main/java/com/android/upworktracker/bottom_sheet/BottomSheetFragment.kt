@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.android.upworktracker.R
+import com.android.upworktracker.bottom_sheet.category.CategoryFragment
+import com.android.upworktracker.bottom_sheet.filter.FilterFragment
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.tabs.TabLayoutMediator
@@ -27,9 +29,8 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val pagerAdaper =
-            ViewPagerAdapter(this)
-        bottomSheetViewPager.adapter = pagerAdaper
+        val pagerAdapter = ViewPagerAdapter(this, listOf(FilterFragment(), CategoryFragment()))
+        bottomSheetViewPager.adapter = pagerAdapter
         bottomSheetViewPager.offscreenPageLimit = 2
 
         TabLayoutMediator(viewPagerTabLayout, bottomSheetViewPager) { tab, position ->
@@ -38,12 +39,12 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
                 else -> "category"
             }
         }.attach()
-
+//        FIXME
         clearButton.setOnClickListener {
-            pagerAdaper.apply {
-                when(bottomSheetViewPager.currentItem){
-                    0 -> filterFragment.clearCheckboxes()
-                    1 -> categoryFragment.clearCheckboxes()
+            pagerAdapter.apply {
+                when (bottomSheetViewPager.currentItem) {
+//                    0 ->ffragment.clearCheckboxes()
+//                    1 ->cfragment.clearCheckboxes()
                 }
             }
         }

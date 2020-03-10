@@ -16,4 +16,5 @@ class FilterListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             checkbox.isChecked = type.checkedState
         }
     }
+
 }
