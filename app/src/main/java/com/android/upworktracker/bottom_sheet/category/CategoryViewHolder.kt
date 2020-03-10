@@ -11,24 +11,9 @@ class CategoryViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     fun bind(category: Category) = with(itemView) {
 
-        val categoryList = category.description
-        val categoryListAdapter = CategoryListAdapter(categoryList)
-        categoryGroupRecyclerView.adapter = categoryListAdapter
-        categoryGroupRecyclerView.layoutManager = LinearLayoutManager(context)
-
         titleCheckbox.text = category.titleCategory
         titleCheckbox.isChecked = category.checkedState
 
-        titleCheckbox.setOnClickListener {
-
-            category.checkedState = !category.checkedState
-            titleCheckbox.isChecked = category.checkedState
-
-            for (c in categoryList)
-                c.checkedState = category.checkedState
-            categoryListAdapter.notifyDataSetChanged()
-
-        }
     }
 
 }
