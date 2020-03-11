@@ -10,14 +10,7 @@ class CategoryPresenter(private val repo: Repository) : MvpPresenter<CategoryVie
     private val categoryAdapter = CategoryAdapter()
 
     fun getDataFromRepo() {
-//        val bag = repo.getCategoryList()
-//                .subscribeOn(Schedulers.newThread())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(
-//                        { loadData(it) },
-//                        { it.printStackTrace() }
-//                )
-        loadData(repo.getCategoryContent())
+        loadData(repo.categoryContentList)
     }
 
     private fun loadData(item: List<Category>) {
@@ -26,12 +19,13 @@ class CategoryPresenter(private val repo: Repository) : MvpPresenter<CategoryVie
         categoryAdapter.setData(categoryList)
     }
 
-    fun clearCheckboxes(){
-        for (category in categoryList){
+    fun clearCheckboxes() {
+        for (category in categoryList) {
             category.checkedState = false
             for (description in category.description)
                 description.checkedState = false
         }
+
         categoryAdapter.notifyDataSetChanged()
     }
 

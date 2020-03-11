@@ -10,14 +10,7 @@ class FilterPresenter(private val repo: Repository) : MvpPresenter<FilterView>()
     private val filterAdapter = FilterAdapter()
 
     fun getDataFromRepo() {
-//        repo.getFilterList()
-//                .subscribeOn(Schedulers.newThread())
-//                .observeOn(AndroidSchedulers.mainThread())
-//                .subscribe(
-//                        { loadData(it) },
-//                        {}
-//                )
-        loadData(repo.getFilterContent())
+        loadData(repo.filterContentList)
     }
 
     private fun loadData(item: List<Filter>) {
@@ -26,10 +19,11 @@ class FilterPresenter(private val repo: Repository) : MvpPresenter<FilterView>()
         filterAdapter.setData(filterList)
     }
 
-    fun clearCheckboxes(){
+    fun clearCheckboxes() {
         for (filter in filterList)
             for (filter_item in filter.type)
                 filter_item.checkedState = false
         filterAdapter.notifyDataSetChanged()
     }
+
 }
