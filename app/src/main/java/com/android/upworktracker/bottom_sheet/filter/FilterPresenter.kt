@@ -16,6 +16,9 @@ class FilterPresenter(private val repo: Repository) : MvpPresenter<FilterView>()
     private fun loadData(item: List<Filter>) {
         viewState.initAdapter(filterAdapter)
         filterList.addAll(item.toMutableList())
+        for (filter in filterList)
+            filter.type[0].checkedState = true
+
         filterAdapter.setData(filterList)
     }
 
