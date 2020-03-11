@@ -6,22 +6,38 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.upworktracker.R
 import com.android.upworktracker.entity.Type
 import kotlinx.android.synthetic.main.checkbox_item.view.*
+import kotlinx.android.synthetic.main.radio_button_item.view.*
 
 
 class FilterListAdapter(private val dataset: List<Type>) :
     RecyclerView.Adapter<FilterListViewHolder>() {
 
+    var checkedPosition = 0
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-            FilterListViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.checkbox_item, parent, false))
+        FilterListViewHolder(
+            LayoutInflater.from(parent.context).inflate(
+                R.layout.radio_button_item,
+                parent,
+                false
+            )
+        )
 
     override fun getItemCount() = dataset.size
 
     override fun onBindViewHolder(holder: FilterListViewHolder, position: Int) {
         holder.bind(dataset[position])
-        with(holder.itemView){
-            checkbox.setOnClickListener {
-                dataset[position].checkedState = !dataset[position].checkedState
+        with(holder.itemView) {
+            radioButton.setOnClickListener {
+                checkedPosition = position
+                for (item in dataset)
+                    item.checkedState = false
+                dataset[position].checkedState = true
+                notifyDataSetChanged()
+//                dataset[position].checkedState = !dataset[position].checkedState
+//                radioButton.isChecked = dataset[position].checkedState
             }
         }
     }
+
 }
