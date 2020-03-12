@@ -35,7 +35,7 @@
                 android:id="@+id/upworkTrackerTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/upwork_tracker"
+                android:text="@string/upwork_tracker_header"
                 android:textColor="@color/lima"
                 android:textSize="36sp"
                 android:textStyle="bold"

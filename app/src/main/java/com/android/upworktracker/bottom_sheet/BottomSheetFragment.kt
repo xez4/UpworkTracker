@@ -1,4 +1,4 @@
-package com.android.upworktracker.bottom_sheet_filter
+package com.android.upworktracker.bottom_sheet
 
 import android.content.DialogInterface
 import android.graphics.Color
@@ -8,13 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.android.upworktracker.R
-import com.android.upworktracker.bottom_sheet_filter.view_pager.ViewPagerFilterAdapter
+import com.android.upworktracker.bottom_sheet.category.CategoryFragment
+import com.android.upworktracker.bottom_sheet.filter.FilterFragment
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.bottom_sheet_view_pager.*
 
-class BottomSheet : BottomSheetDialogFragment() {
+class BottomSheetFragment : BottomSheetDialogFragment() {
 
     override fun onCreateView(
             inflater: LayoutInflater,
@@ -28,7 +29,8 @@ class BottomSheet : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        bottomSheetViewPager.adapter = ViewPagerFilterAdapter(this)
+        val pagerAdapter = ViewPagerAdapter(this, listOf(FilterFragment(), CategoryFragment()))
+        bottomSheetViewPager.adapter = pagerAdapter
         bottomSheetViewPager.offscreenPageLimit = 2
 
         TabLayoutMediator(viewPagerTabLayout, bottomSheetViewPager) { tab, position ->
@@ -37,6 +39,15 @@ class BottomSheet : BottomSheetDialogFragment() {
                 else -> "category"
             }
         }.attach()
+//        FIXME
+        clearButton.setOnClickListener {
+            pagerAdapter.apply {
+                when (bottomSheetViewPager.currentItem) {
+//                    0 ->ffragment.clearCheckboxes()
+//                    1 ->cfragment.clearCheckboxes()
+                }
+            }
+        }
     }
 
     override fun onStart() {

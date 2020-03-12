@@ -37,12 +37,13 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/clearButton"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
             android:insetTop="0dp"
             android:insetBottom="0dp"
-            android:text="Clear"
+            android:text="@string/clear_button_text"
             android:textAllCaps="false"
             android:textColor="@android:color/black"
             android:textSize="18sp"
@@ -50,12 +51,13 @@
             app:cornerRadius="0dp" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/trackButton"
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
             android:insetTop="0dp"
             android:insetBottom="0dp"
-            android:text="Track"
+            android:text="@string/track_button_text"
             android:textAllCaps="false"
             android:textSize="18sp"
             app:cornerRadius="0dp" />
