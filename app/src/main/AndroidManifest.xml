@@ -15,7 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
-        <activity android:name=".bottom_sheet_filter.CategoryFilterActivity"/>
+        <service android:name=".services.MessageService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
         <activity android:name=".intro.IntroActivity" />
         <activity android:name=".adverts.AdvertActivity">
             <intent-filter>

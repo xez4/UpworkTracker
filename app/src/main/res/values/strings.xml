@@ -43,5 +43,6 @@
     <string name="translation">translation</string>
     <string name="web_mobile_amp_software_dev"><![CDATA[web, mobile & software dev]]></string>
     <string name="writing">writing</string>
+    <string name="msg_token_fmt" translatable="false">InstanceID Token: %s</string>
 
 </resources>
