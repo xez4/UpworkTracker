@@ -14,6 +14,7 @@ class FilterListAdapter(private val dataset: List<Type>) :
 
     var checkedPosition = 0
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         FilterListViewHolder(
             LayoutInflater.from(parent.context).inflate(
@@ -28,10 +29,10 @@ class FilterListAdapter(private val dataset: List<Type>) :
     override fun onBindViewHolder(holder: FilterListViewHolder, position: Int) {
         holder.bind(dataset[position])
         with(holder.itemView) {
-            radioButton.setOnClickListener {
-                dataset[checkedPosition].checkedState = false
-                notifyItemChanged(checkedPosition)
-                checkedPosition = position
+            radioButton.setOnClickListener{
+             dataset[checkedPosition].checkedState = false
+               notifyItemChanged(checkedPosition)
+               checkedPosition = position
                 dataset[position].checkedState = true
             }
         }

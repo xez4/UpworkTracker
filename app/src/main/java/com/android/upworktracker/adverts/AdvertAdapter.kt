@@ -10,13 +10,15 @@ class AdvertAdapter : RecyclerView.Adapter<AdvertViewHolder>() {
 
     private val adverts = mutableListOf<TrackerResponse>()
 
+    lateinit var advertCallback: AdvertCallback
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         AdvertViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.adverts_card, parent, false)
         )
 
     override fun onBindViewHolder(holder: AdvertViewHolder, position: Int) =
-            holder.bind(adverts[position])
+            holder.bind(adverts[position], advertCallback)
 
     override fun getItemCount() = adverts.size
 

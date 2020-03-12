@@ -17,6 +17,7 @@ class AdvertPresenter(
         private val repo: Repository
 ) : MvpPresenter<AdvertView>() {
 
+
     private val compositeDisposable = CompositeDisposable()
 
     private val advertAdapter = AdvertAdapter()
@@ -53,6 +54,18 @@ class AdvertPresenter(
     private fun loadData(item: MutableList<TrackerResponse>) {
         viewState.initAdapter(advertAdapter)
         advertAdapter.setData(item)
+    }
+
+    private val advertLinkCallback = object : AdvertCallback{
+
+        override fun advertOnClickListener(link: String) {
+            viewState.openLink(link)
+        }
+    }
+
+    override fun onFirstViewAttach() {
+        super.onFirstViewAttach()
+        advertAdapter.advertCallback = advertLinkCallback
     }
 
     fun notifyOptionsItemSelected(itemId: Int) {

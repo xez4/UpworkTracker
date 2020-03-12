@@ -18,5 +18,7 @@ data class TrackerResponse(
         @SerializedName("skills")
         val skills: MutableList<String>?,
         @SerializedName("title")
-        val title: String
+        val title: String,
+        @SerializedName("link")
+        val link: String
 )

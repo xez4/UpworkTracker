@@ -1,6 +1,7 @@
 package com.android.upworktracker.adverts
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -21,11 +22,6 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
 
     @InjectPresenter
     lateinit var advertPresenter: AdvertPresenter
-
-    @ProvidePresenter
-    fun provideAdvertsPresenter() = get<AdvertPresenter>()
-
-    private val bottomSheet = BottomSheetFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,6 +47,11 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
         }
     }
 
+    @ProvidePresenter
+    fun provideAdvertsPresenter() = get<AdvertPresenter>()
+
+    private val bottomSheet = BottomSheetFragment()
+
     override fun onResume() {
         super.onResume()
         bottomSheet.dialog?.hide()
@@ -63,6 +64,10 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
                 hideProgress()
             }
         })
+    }
+
+    override fun openLink(link: String) {
+        startActivity(Intent (Intent.ACTION_VIEW, Uri.parse(link)))
     }
 
     override fun hideProgress() {

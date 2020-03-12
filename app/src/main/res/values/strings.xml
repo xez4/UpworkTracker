@@ -44,5 +44,7 @@
     <string name="web_mobile_amp_software_dev"><![CDATA[web, mobile & software dev]]></string>
     <string name="writing">writing</string>
     <string name="msg_token_fmt" translatable="false">InstanceID Token: %s</string>
+    <string name="track_button_text">Track</string>
+    <string name="clear_button_text">Clear</string>
 
 </resources>

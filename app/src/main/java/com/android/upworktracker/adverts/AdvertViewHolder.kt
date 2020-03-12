@@ -11,7 +11,7 @@ import java.util.*
 
 class AdvertViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
-    fun bind(advert: TrackerResponse) = with(itemView) {
+    fun bind(advert: TrackerResponse, advertCallback: AdvertCallback) = with(itemView) {
         recyclerTags.layoutManager =
                 LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
@@ -35,6 +35,9 @@ class AdvertViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         uploadDataText.text = formatDate(advert.date)
         countryAdvertText.text = advert.country
         descriptionAdvertText.text = decode(advert.description.capitalize())
+
+        setOnClickListener{advertCallback.advertOnClickListener(advert.link)}
+
     }
 
     private fun decode(str: String) =

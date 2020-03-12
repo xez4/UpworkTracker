@@ -5,6 +5,7 @@ import moxy.viewstate.strategy.alias.AddToEndSingle
 
 @AddToEndSingle
 interface AdvertView : MvpView {
+    fun openLink(link:String)
     fun refresh()
     fun setToolbar()
     fun initAdapter(advertAdapter: AdvertAdapter)
