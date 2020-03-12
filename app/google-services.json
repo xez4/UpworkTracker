@@ -1,0 +1,127 @@
+{
+  "project_info": {
+    "project_number": "154390434272",
+    "firebase_url": "https://upwork-tracker.firebaseio.com",
+    "project_id": "upwork-tracker",
+    "storage_bucket": "upwork-tracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:154390434272:android:c13db049a4c51a4c3f5b85",
+        "android_client_info": {
+          "package_name": "com.android.upworktracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "154390434272-7h7api48q132bojc6lljrjp6d5qplep8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.android.upworktracker",
+            "certificate_hash": "a315379f7819a8da85db47fda5b1b659cb30dea5"
+          }
+        },
+        {
+          "client_id": "154390434272-tflp30fmukkavundn5lh9scb62ngbj6v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3_I8AeD42nQcqbdZ9oRk3IxqfmsF0zSo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "154390434272-tflp30fmukkavundn5lh9scb62ngbj6v.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "154390434272-86mc2egftab91ph7rmr7gt6ep9qge4hm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "asedo.Upwork-Tracker"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:154390434272:android:69269e498717c0ff3f5b85",
+        "android_client_info": {
+          "package_name": "com.example.fcmtest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "154390434272-tflp30fmukkavundn5lh9scb62ngbj6v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3_I8AeD42nQcqbdZ9oRk3IxqfmsF0zSo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "154390434272-tflp30fmukkavundn5lh9scb62ngbj6v.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "154390434272-86mc2egftab91ph7rmr7gt6ep9qge4hm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "asedo.Upwork-Tracker"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:154390434272:android:c7cb2073566bb7883f5b85",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "154390434272-tflp30fmukkavundn5lh9scb62ngbj6v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3_I8AeD42nQcqbdZ9oRk3IxqfmsF0zSo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "154390434272-tflp30fmukkavundn5lh9scb62ngbj6v.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "154390434272-86mc2egftab91ph7rmr7gt6ep9qge4hm.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "asedo.Upwork-Tracker"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
