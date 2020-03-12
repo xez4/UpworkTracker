@@ -33,6 +33,7 @@ class FilterListAdapter(private val dataset: List<Type>) :
                 dataset[checkedPosition].checkedState = false
                 notifyItemChanged(checkedPosition)
                 checkedPosition = position
+                notifyItemChanged(checkedPosition)
                 dataset[position].checkedState = true
             }
         }

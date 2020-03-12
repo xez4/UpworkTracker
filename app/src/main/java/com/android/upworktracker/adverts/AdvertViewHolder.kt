@@ -13,7 +13,7 @@ class AdvertViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     fun bind(advert: TrackerResponse, advertCallback: AdvertCallback) = with(itemView) {
         recyclerTags.layoutManager =
-                LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
 
         if (advert.skills.isNullOrEmpty()) {
             recyclerTags.visibility = View.GONE
@@ -36,23 +36,24 @@ class AdvertViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         countryAdvertText.text = advert.country
         descriptionAdvertText.text = decode(advert.description.capitalize())
 
-        setOnClickListener{advertCallback.advertOnClickListener(advert.link)}
+        setOnClickListener { advertCallback.advertOnClickListener(advert.link) }
 
     }
 
     private fun decode(str: String) =
-            str.replace("&amp;amp;", "&")
-                    .replace("&amp;", "&")
-                    .replace("&quot;", " \" ")
-                    .replace("&apos;", "\'")
-                    .replace("&lt;", "<")
-                    .replace("&gt;", ">")
-                    .replace("#039;", "\'")
-                    .replace("&rsquo;", "’")
-                    .replace("&lsquo;", "‘")
-                    .replace("#8217;", "’")
-                    .replace("&ndash;", "-")
-                    .replace("&mdash;", "-")
+        str.replace("&amp;amp;", "&")
+            .replace("&amp;", "&")
+            .replace("&quot;", " \" ")
+            .replace("&apos;", "\'")
+            .replace("&lt;", "<")
+            .replace("&gt;", ">")
+            .replace("#039;", "\'")
+            .replace("&rsquo;", "’")
+            .replace("&lsquo;", "‘")
+            .replace("#8217;", "’")
+            .replace("&ndash;", "-")
+            .replace("&mdash;", "-")
+            .replace("&'", "\'")
 
     private fun formatDate(date: String): String {
         val inFormat = SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss Z", Locale.US)

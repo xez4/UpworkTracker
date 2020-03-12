@@ -1,36 +1,22 @@
 package com.android.upworktracker.bottom_sheet.category
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.android.upworktracker.R
+import com.android.upworktracker.bottom_sheet.BaseBottomSheetFragment
 import kotlinx.android.synthetic.main.category_list.*
-import moxy.MvpAppCompatFragment
 import moxy.presenter.InjectPresenter
 import moxy.presenter.ProvidePresenter
 import org.koin.android.ext.android.get
 
-class CategoryFragment : MvpAppCompatFragment(), CategoryView {
+class CategoryBottomSheetFragment : BaseBottomSheetFragment(), CategoryView {
 
     @InjectPresenter
     lateinit var categoryPresenter: CategoryPresenter
 
     @ProvidePresenter
     fun provideCategoryPresenter() = get<CategoryPresenter>()
-
-    override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.category_list, container, false)
-    }
-
-    companion object {
-        fun newInstance() =
-                CategoryFragment()
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -42,8 +28,10 @@ class CategoryFragment : MvpAppCompatFragment(), CategoryView {
         categoryListRecyclerView.layoutManager = LinearLayoutManager(context)
     }
 
-    fun clearCheckboxes() {
+   override fun clearCheckboxes() {
         categoryPresenter.clearCheckboxes()
     }
+
+    override fun getLayoutResId() = R.layout.category_list
 
 }
