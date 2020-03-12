@@ -30,9 +30,9 @@ class FilterListAdapter(private val dataset: List<Type>) :
         holder.bind(dataset[position])
         with(holder.itemView) {
             radioButton.setOnClickListener{
-             dataset[checkedPosition].checkedState = false
-               notifyItemChanged(checkedPosition)
-               checkedPosition = position
+                dataset[checkedPosition].checkedState = false
+                notifyItemChanged(checkedPosition)
+                checkedPosition = position
                 dataset[position].checkedState = true
             }
         }
