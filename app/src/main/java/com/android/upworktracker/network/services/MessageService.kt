@@ -4,7 +4,6 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.media.RingtoneManager
 import android.util.Log
 import androidx.constraintlayout.widget.Constraints.TAG
@@ -13,13 +12,11 @@ import com.android.upworktracker.R
 import com.android.upworktracker.UpworkTracker
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
-import org.koin.android.ext.android.inject
 
 
 class MessageService : FirebaseMessagingService() {
 
     private val id = "MessageID"
-    private val sharedPreferences: SharedPreferences by inject()
 
     override fun onMessageReceived(remoteMessage: RemoteMessage) {
         Log.d(TAG, "send from: ${remoteMessage.from}")
@@ -57,7 +54,6 @@ class MessageService : FirebaseMessagingService() {
     }
 
     private fun sendRegistrationToServer(token: String?) {
-        sharedPreferences.edit().putString("fcmToken", token).apply()
         Log.d(TAG, "sendRegistrationTokenToServer($token)")
     }
 

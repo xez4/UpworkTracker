@@ -11,9 +11,9 @@ import io.reactivex.schedulers.Schedulers
 import moxy.MvpPresenter
 
 class FilterPresenter(
-    private val repo: Repository,
-    private val sharedPreferences: SharedPreferences,
-    private val pushService: PushService
+        private val repo: Repository,
+        private val sharedPreferences: SharedPreferences,
+        private val pushService: PushService
 ) : MvpPresenter<FilterView>() {
 
     private val filterList = mutableListOf<Filter>()
@@ -24,10 +24,10 @@ class FilterPresenter(
     }
 
     private fun getFirebaseToken(): String? =
-        sharedPreferences.getString("fcmToken", "")
+            sharedPreferences.getString("fcmToken", "hello")
 
-    fun radioCheckState() =
-        filterList.flatMap { it.type.filter { it.checkedState }.map { it.serverName } }
+    private fun radioCheckState() =
+            filterList.flatMap { it.type.filter { it.checkedState }.map { it.serverName } }
 
     private fun loadData(item: List<Filter>) {
         viewState.initAdapter(filterAdapter)
@@ -41,29 +41,30 @@ class FilterPresenter(
     fun trackRequest() {
         val (sortingBy, jobType, experienceLvl, clientHistory, numberOfPropsals, budget, clientInfo, workload, duration) = radioCheckState()
         val disposableBag =
-            pushService.postPush(
-                    TrackerPushRequest(
-                        sort = sortingBy,
-                        deviceToken = getFirebaseToken(),
-                        budget = budget,
-                        jobType = jobType,
-                        contractorTier = experienceLvl,
-                        workload = workload,
-                        clientHires = clientHistory,
-                        proposals = numberOfPropsals,
-                        verifiedPaymentOnly = clientInfo,
-                        durationV3 = duration
-                    )
-                )
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(
-                    {
-                        Log.e("FilterPresenter", "On success trackRequest()")
-                        Log.e("checkcheck", "${radioCheckState()}")
-                    },
-                    { it.printStackTrace() }
-                )
+                pushService.postPush(
+                                TrackerPushRequest(
+                                        sort = sortingBy,
+                                        deviceToken = getFirebaseToken(),
+                                        budget = budget,
+                                        jobType = jobType,
+                                        contractorTier = experienceLvl,
+                                        workload = workload,
+                                        clientHires = clientHistory,
+                                        proposals = numberOfPropsals,
+                                        verifiedPaymentOnly = clientInfo,
+                                        durationV3 = duration
+                                )
+                        )
+                        .subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(
+                                {
+                                    Log.e("FilterPresenter", "On success trackRequest()")
+                                    Log.e("FilterPresenter", getFirebaseToken().toString())
+                                    Log.e("checkcheck", "${radioCheckState()}")
+                                },
+                                { it.printStackTrace() }
+                        )
     }
 
     fun clearCheckboxes() {
@@ -77,9 +78,7 @@ class FilterPresenter(
 
 }
 
-
 private operator fun <E> List<E>.component6() = this[5]
 private operator fun <E> List<E>.component7() = this[6]
 private operator fun <E> List<E>.component8() = this[7]
 private operator fun <E> List<E>.component9() = this[8]
-
