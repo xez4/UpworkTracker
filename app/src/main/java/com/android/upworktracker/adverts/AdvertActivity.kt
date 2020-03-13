@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.upworktracker.R
 import com.android.upworktracker.bottom_sheet.BottomSheetFragment
+import com.android.upworktracker.entity.TrackerRequest
 import com.android.upworktracker.intro.IntroActivity
 import kotlinx.android.synthetic.main.activity_advert.*
 import kotlinx.android.synthetic.main.toolbar.*
@@ -33,6 +34,7 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
 
         advertPresenter.isFirstRun()
         setToolbar()
+        recyclerAdvertsCards.setItemViewCacheSize(TrackerRequest().paging.substringAfter('B').toInt())
 
         hideProgressBarOnScroll()
         refresh()
