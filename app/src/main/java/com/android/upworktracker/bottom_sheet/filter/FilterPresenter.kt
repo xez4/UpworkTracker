@@ -5,7 +5,6 @@ import android.util.Log
 import com.android.upworktracker.bottom_sheet.Repository
 import com.android.upworktracker.entity.Filter
 import com.android.upworktracker.entity.TrackerPushRequest
-import com.android.upworktracker.entity.TrackerResponse
 import com.android.upworktracker.network.services.PushService
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -27,8 +26,8 @@ class FilterPresenter(
     private fun getFirebaseToken(): String? =
         sharedPreferences.getString("fcmToken", "")
 
-    fun radioCheckState()= filterList.map { it.type.filter { it.checkedState }.map{ it.serverName } }
-
+    fun radioCheckState() =
+        filterList.flatMap { it.type.filter { it.checkedState }.map { it.serverName } }
 
     private fun loadData(item: List<Filter>) {
         viewState.initAdapter(filterAdapter)
@@ -40,13 +39,29 @@ class FilterPresenter(
     }
 
     fun trackRequest() {
+        val (sortingBy, jobType, experienceLvl, clientHistory, numberOfPropsals, budget, clientInfo, workload, duration) = radioCheckState()
         val disposableBag =
-            pushService.postPush(TrackerPushRequest(deviceToken = getFirebaseToken()))
+            pushService.postPush(
+                    TrackerPushRequest(
+                        sort = sortingBy,
+                        deviceToken = getFirebaseToken(),
+                        budget = budget,
+                        jobType = jobType,
+                        contractorTier = experienceLvl,
+                        workload = workload,
+                        clientHires = clientHistory,
+                        proposals = numberOfPropsals,
+                        verifiedPaymentOnly = clientInfo,
+                        durationV3 = duration
+                    )
+                )
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
-                    { Log.e("FilterPresenter", "On success trackRequest()")
-                    Log.e("checkcheck", "${radioCheckState()}")},
+                    {
+                        Log.e("FilterPresenter", "On success trackRequest()")
+                        Log.e("checkcheck", "${radioCheckState()}")
+                    },
                     { it.printStackTrace() }
                 )
     }
@@ -61,3 +76,10 @@ class FilterPresenter(
     }
 
 }
+
+
+private operator fun <E> List<E>.component6() = this[5]
+private operator fun <E> List<E>.component7() = this[6]
+private operator fun <E> List<E>.component8() = this[7]
+private operator fun <E> List<E>.component9() = this[8]
+
