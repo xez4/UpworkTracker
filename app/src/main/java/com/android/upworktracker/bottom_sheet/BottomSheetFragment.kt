@@ -29,7 +29,10 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val pagerAdapter = ViewPagerAdapter(this, listOf(FilterBottomSheetFragment(), CategoryBottomSheetFragment()))
+        val pagerAdapter = ViewPagerAdapter(
+                this,
+                listOf(FilterBottomSheetFragment(), CategoryBottomSheetFragment())
+        )
         bottomSheetViewPager.adapter = pagerAdapter
         bottomSheetViewPager.offscreenPageLimit = 2
 
@@ -43,8 +46,8 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
         clearButton.setOnClickListener {
             pagerAdapter.apply {
                 when (bottomSheetViewPager.currentItem) {
-                    0 ->bottomSheetFragments[0].clearCheckboxes()
-                    1 ->bottomSheetFragments[1].clearCheckboxes()
+                    0 -> bottomSheetFragments[0].clearCheckboxes()
+                    1 -> bottomSheetFragments[1].clearCheckboxes()
                 }
             }
         }
@@ -68,7 +71,6 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
         }
     }
 
-    override fun onDismiss(dialog: DialogInterface) {
-    }
+    override fun onDismiss(dialog: DialogInterface) {}
 
 }

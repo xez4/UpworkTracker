@@ -1,6 +1,5 @@
 package com.android.upworktracker.bottom_sheet.category.inner_list
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -30,14 +29,15 @@ class CategoryListAdapter(
     override fun onBindViewHolder(holder: CategoryListViewHolder, position: Int) {
         val category = dataset[position]
         holder.bind(category)
-        with(holder.itemView){
+        with(holder.itemView) {
             checkbox.setOnClickListener {
                 category.checkedState = !category.checkedState
-                if (!category.checkedState){
+                if (!category.checkedState) {
                     categoryTitle.checkedState = false
                     parentAdapter.notifyDataSetChanged()
                 }
             }
         }
     }
+
 }

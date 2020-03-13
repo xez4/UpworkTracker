@@ -21,10 +21,11 @@ class CategoryAdapter : RecyclerView.Adapter<CategoryViewHolder>() {
     override fun onBindViewHolder(holder: CategoryViewHolder, position: Int) {
         val category = categories[position]
         holder.bind(category)
-        with(holder.itemView){
+        with(holder.itemView) {
 
             val categoryList = category.description
-            val categoryListAdapter = CategoryListAdapter(categoryList, category,this@CategoryAdapter)
+            val categoryListAdapter =
+                CategoryListAdapter(categoryList, category, this@CategoryAdapter)
             categoryGroupRecyclerView.adapter = categoryListAdapter
             categoryGroupRecyclerView.layoutManager = LinearLayoutManager(context)
 

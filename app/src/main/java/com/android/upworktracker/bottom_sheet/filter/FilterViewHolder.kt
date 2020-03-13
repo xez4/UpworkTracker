@@ -10,13 +10,11 @@ import kotlinx.android.synthetic.main.filter_title_list.view.*
 class FilterViewHolder(ItemView: View) : RecyclerView.ViewHolder(ItemView) {
 
     fun bind(filter: Filter) = with(itemView) {
-
         val filterListAdapter = FilterListAdapter(filter.type)
         filterGroupRecyclerView.adapter = filterListAdapter
         filterGroupRecyclerView.layoutManager = LinearLayoutManager(context)
 
         filterTitle.text = filter.titleFilter
-
     }
 
 }

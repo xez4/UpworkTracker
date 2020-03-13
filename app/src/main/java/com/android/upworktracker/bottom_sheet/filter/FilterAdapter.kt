@@ -10,8 +10,11 @@ class FilterAdapter : RecyclerView.Adapter<FilterViewHolder>() {
 
     private val filter = mutableListOf<Filter>()
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilterViewHolder =
-            FilterViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.filter_title_list, parent, false))
+        FilterViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.filter_title_list, parent, false)
+        )
 
     override fun onBindViewHolder(holder: FilterViewHolder, position: Int) {
         holder.bind(filter[position])

@@ -14,7 +14,6 @@ class FilterListAdapter(private val dataset: List<Type>) :
 
     var checkedPosition = 0
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         FilterListViewHolder(
             LayoutInflater.from(parent.context).inflate(

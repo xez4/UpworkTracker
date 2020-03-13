@@ -17,7 +17,6 @@ class AdvertPresenter(
         private val repo: Repository
 ) : MvpPresenter<AdvertView>() {
 
-
     private val compositeDisposable = CompositeDisposable()
 
     private val advertAdapter = AdvertAdapter()

@@ -32,6 +32,7 @@ class UpworkTracker : Application() {
                     repositoryModule
             ))
         }
+
         FirebaseMessaging.getInstance().isAutoInitEnabled = true
         FirebaseInstanceId.getInstance().instanceId
             .addOnCompleteListener(OnCompleteListener { task ->

@@ -67,7 +67,7 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
     }
 
     override fun openLink(link: String) {
-        startActivity(Intent (Intent.ACTION_VIEW, Uri.parse(link)))
+        startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(link)))
     }
 
     override fun hideProgress() {
