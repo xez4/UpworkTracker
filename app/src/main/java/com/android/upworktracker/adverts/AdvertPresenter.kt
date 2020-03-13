@@ -35,12 +35,15 @@ class AdvertPresenter(
                     {
                         loadData(it)
                         viewState.hideProgress()
+                        viewState.enableFilterButton()
                     },
                     { it.printStackTrace() }
                 )
 
         compositeDisposable.add(disposable)
     }
+
+
 
     fun isFirstRun() {
         val isFirstRun =

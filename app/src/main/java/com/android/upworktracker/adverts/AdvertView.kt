@@ -12,4 +12,5 @@ interface AdvertView : MvpView {
     fun finishAdvertActivity()
     fun hideProgress()
     fun hideProgressBarOnScroll()
+    fun enableFilterButton()
 }

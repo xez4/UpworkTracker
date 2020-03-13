@@ -5,6 +5,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.ProgressBar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -28,16 +29,13 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
 
         setContentView(R.layout.activity_advert)
 
+        filterButton.visibility = View.INVISIBLE
+
         advertPresenter.isFirstRun()
-
         setToolbar()
-
         advertPresenter.getDataToRepoFromAPI()
-
         hideProgressBarOnScroll()
-
         refresh()
-
         filterButton.setOnClickListener {
             if (!bottomSheet.isAdded) {
                 bottomSheet.show(supportFragmentManager, "TAG")
@@ -45,6 +43,7 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
                 bottomSheet.dialog?.show()
             }
         }
+
     }
 
     @ProvidePresenter
@@ -79,11 +78,16 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
     override fun refresh() {
         horizontalProgressBar.visibility = ProgressBar.VISIBLE
         advertPresenter.getAdvert()
+
     }
 
     override fun finishAdvertActivity() {
         startActivity(Intent(this, IntroActivity::class.java))
         finish()
+    }
+
+    override fun enableFilterButton() {
+        filterButton.visibility = View.VISIBLE
     }
 
     override fun setToolbar() {
