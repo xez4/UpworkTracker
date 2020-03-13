@@ -33,7 +33,7 @@ class AdvertActivity : MvpAppCompatActivity(), AdvertView {
 
         advertPresenter.isFirstRun()
         setToolbar()
-        advertPresenter.getDataToRepoFromAPI()
+
         hideProgressBarOnScroll()
         refresh()
         filterButton.setOnClickListener {

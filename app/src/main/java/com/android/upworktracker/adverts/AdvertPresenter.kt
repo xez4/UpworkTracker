@@ -12,16 +12,16 @@ import io.reactivex.schedulers.Schedulers
 import moxy.MvpPresenter
 
 class AdvertPresenter(
-        private val upworkService: UpworkService,
-        private val sharedPreferences: SharedPreferences,
-        private val repo: Repository
+    private val upworkService: UpworkService,
+    private val sharedPreferences: SharedPreferences,
+    private val repo: Repository
 ) : MvpPresenter<AdvertView>() {
 
     private val compositeDisposable = CompositeDisposable()
 
     private val advertAdapter = AdvertAdapter()
 
-    fun getDataToRepoFromAPI() {
+    private fun getDataToRepoFromAPI() {
         repo.getFilterList()
         repo.getCategoryList()
     }
@@ -32,15 +32,18 @@ class AdvertPresenter(
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
-                    {
-                        loadData(it)
-                        viewState.hideProgress()
-                        viewState.enableFilterButton()
-                    },
+                    { initializeData(it) },
                     { it.printStackTrace() }
                 )
 
         compositeDisposable.add(disposable)
+    }
+
+    private fun initializeData(mutableList: MutableList<TrackerResponse>) {
+        getDataToRepoFromAPI()
+        loadData(mutableList)
+        viewState.hideProgress()
+        viewState.enableFilterButton()
     }
 
     fun isFirstRun() {
@@ -56,7 +59,7 @@ class AdvertPresenter(
         advertAdapter.setData(item)
     }
 
-    private val advertLinkCallback = object : AdvertCallback{
+    private val advertLinkCallback = object : AdvertCallback {
 
         override fun advertOnClickListener(link: String) {
             viewState.openLink(link)
