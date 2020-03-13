@@ -34,7 +34,7 @@ class FilterBottomSheetFragment : BaseBottomSheetFragment(), FilterView {
     }
 
     override fun notifyTrack() {
-
+        filterPresenter.trackRequest()
     }
 
     override fun getLayoutResId() = R.layout.filter_list

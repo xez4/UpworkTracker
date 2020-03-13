@@ -1,5 +1,6 @@
 package com.android.upworktracker.di
 
+import com.android.upworktracker.network.services.PushService
 import com.android.upworktracker.network.services.RepositoryService
 import com.android.upworktracker.network.services.UpworkService
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -9,6 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 val networkModule = module {
     single { provideRetrofit() }
+    single { providePushRetrofit() }
     single { provideRepositoryRetrofit() }
 }
 
@@ -18,6 +20,13 @@ fun provideRetrofit(): UpworkService = Retrofit.Builder()
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .build()
         .create(UpworkService::class.java)
+
+fun providePushRetrofit(): PushService = Retrofit.Builder()
+    .baseUrl("https://upwork-tracker.herokuapp.com/api/")
+    .addConverterFactory(GsonConverterFactory.create())
+    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+    .build()
+    .create(PushService::class.java)
 
 fun provideRepositoryRetrofit(): RepositoryService = Retrofit.Builder()
         .baseUrl("https://my-json-server.typicode.com/")

@@ -43,8 +43,6 @@ class AdvertPresenter(
         compositeDisposable.add(disposable)
     }
 
-
-
     fun isFirstRun() {
         val isFirstRun =
             sharedPreferences.getBoolean("isFirstRun", true)

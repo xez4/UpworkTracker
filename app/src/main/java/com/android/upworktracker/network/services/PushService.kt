@@ -6,6 +6,6 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface PushService {
-    @POST("tracker/orders")
+    @POST("tracker/orders/track")
     fun postPush(@Body body: TrackerPushRequest): Completable
 }
