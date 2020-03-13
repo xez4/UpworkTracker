@@ -11,6 +11,8 @@
     <string name="country_card">Spain</string>
     <string name="tag">very good</string>
 
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+
     <string name="next_page_button">Next</string>
     <string name="first_fragment_title">Check for jobs in bed, on the run or anywhere else - easy!</string>
     <string name="first_fragment_description">Still checking for freelancer jobs only when sitting in front of a computer?</string>

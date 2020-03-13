@@ -5,6 +5,6 @@ import io.reactivex.Single
 import retrofit2.http.GET
 
 interface RepositoryService {
-    @GET("xez4/json-data/db")
+    @GET("xez4/json-db/db")
     fun getRepositoryData(): Single<DatabaseResponse>
 }
