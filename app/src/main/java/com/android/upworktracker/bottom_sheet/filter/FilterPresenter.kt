@@ -10,7 +10,7 @@ class FilterPresenter(private val repo: Repository) : MvpPresenter<FilterView>()
     private val filterAdapter = FilterAdapter()
 
     fun getDataFromRepo() {
-        loadData(repo.filterContentList)
+        loadData(repo.filterContentList!!)
     }
 
     private fun loadData(item: List<Filter>) {

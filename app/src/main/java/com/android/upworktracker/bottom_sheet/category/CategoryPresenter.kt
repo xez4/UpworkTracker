@@ -20,12 +20,10 @@ class CategoryPresenter(private val repo: Repository) : MvpPresenter<CategoryVie
     }
 
     fun clearCheckboxes() {
-        for (category in categoryList) {
-            category.checkedState = false
-            for (description in category.description)
-                description.checkedState = false
+        categoryList.map {
+            it.checkedState = false
+            it.description.map { it.checkedState = false }
         }
-
         categoryAdapter.notifyDataSetChanged()
     }
 
