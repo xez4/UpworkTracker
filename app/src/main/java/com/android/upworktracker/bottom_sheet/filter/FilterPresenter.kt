@@ -5,6 +5,7 @@ import android.util.Log
 import com.android.upworktracker.bottom_sheet.Repository
 import com.android.upworktracker.entity.Filter
 import com.android.upworktracker.entity.TrackerPushRequest
+import com.android.upworktracker.entity.TrackerResponse
 import com.android.upworktracker.network.services.PushService
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -26,6 +27,8 @@ class FilterPresenter(
     private fun getFirebaseToken(): String? =
         sharedPreferences.getString("fcmToken", "")
 
+    fun radioCheckState()= filterList.map { it.type.filter { it.checkedState }.map{ it.serverName } }
+
 
     private fun loadData(item: List<Filter>) {
         viewState.initAdapter(filterAdapter)
@@ -42,7 +45,8 @@ class FilterPresenter(
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
-                    { Log.e("FilterPresenter", "On success trackRequest()") },
+                    { Log.e("FilterPresenter", "On success trackRequest()")
+                    Log.e("checkcheck", "${radioCheckState()}")},
                     { it.printStackTrace() }
                 )
     }

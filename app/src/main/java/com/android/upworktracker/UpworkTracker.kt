@@ -18,7 +18,8 @@ class UpworkTracker : Application() {
 
         startKoin {
             androidContext(this@UpworkTracker)
-            modules(listOf(
+            modules(
+                listOf(
                     introModule,
                     advertsModule,
                     networkModule,
@@ -26,25 +27,9 @@ class UpworkTracker : Application() {
                     categoryModule,
                     filterModule,
                     repositoryModule
-            ))
+                )
+            )
         }
-
-//        FirebaseMessaging.getInstance().isAutoInitEnabled = true
-//        FirebaseInstanceId.getInstance().instanceId
-//            .addOnCompleteListener(OnCompleteListener { task ->
-//                if (!task.isSuccessful) {
-//                    Log.w(TAG, "getInstanceId failed", task.exception)
-//                    return@OnCompleteListener
-//                }
-//                val token = task.result?.token
-//
-//                val msg = getString(R.string.msg_token_fmt, token)
-//                Log.d(TAG, msg)
-//            })
     }
-
-//    companion object {
-//        private const val TAG = "MainActivity"
-//    }
 
 }
