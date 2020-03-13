@@ -23,10 +23,7 @@ class FilterPresenter(private val repo: Repository) : MvpPresenter<FilterView>()
     }
 
     fun clearCheckboxes() {
-        for (filter in filterList)
-            for (filter_item in filter.type) {
-                filter_item.checkedState = filter_item == filter.type.first()
-            }
+        filterList.map {it.type.mapIndexed{index, type -> type.checkedState = index == 0 } }
         filterAdapter.notifyDataSetChanged()
     }
 
