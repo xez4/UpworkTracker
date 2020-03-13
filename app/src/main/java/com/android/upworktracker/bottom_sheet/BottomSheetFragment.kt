@@ -18,9 +18,9 @@ import kotlinx.android.synthetic.main.bottom_sheet_view_pager.*
 class BottomSheetFragment : BottomSheetDialogFragment() {
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
         return inflater.inflate(R.layout.bottom_sheet_view_pager, container, false)
@@ -30,8 +30,8 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val pagerAdapter = ViewPagerAdapter(
-                this,
-                listOf(FilterBottomSheetFragment(), CategoryBottomSheetFragment())
+            this,
+            listOf(FilterBottomSheetFragment(), CategoryBottomSheetFragment())
         )
         bottomSheetViewPager.adapter = pagerAdapter
         bottomSheetViewPager.offscreenPageLimit = 2
@@ -48,6 +48,15 @@ class BottomSheetFragment : BottomSheetDialogFragment() {
                 when (bottomSheetViewPager.currentItem) {
                     0 -> bottomSheetFragments[0].clearCheckboxes()
                     1 -> bottomSheetFragments[1].clearCheckboxes()
+                }
+            }
+        }
+
+        trackButton.setOnClickListener {
+            pagerAdapter.apply {
+                when (bottomSheetViewPager.currentItem) {
+                    0 -> bottomSheetFragments[0].notifyTrack()
+                    1 -> bottomSheetFragments[1].notifyTrack()
                 }
             }
         }

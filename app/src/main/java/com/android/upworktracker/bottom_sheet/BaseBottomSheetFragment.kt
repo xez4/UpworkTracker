@@ -17,5 +17,6 @@ abstract class BaseBottomSheetFragment : MvpAppCompatFragment() {
 
     abstract fun getLayoutResId(): Int
     abstract fun clearCheckboxes()
+    abstract fun notifyTrack()
 
 }

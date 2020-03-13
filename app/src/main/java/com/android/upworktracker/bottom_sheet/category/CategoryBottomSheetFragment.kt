@@ -34,4 +34,7 @@ class CategoryBottomSheetFragment : BaseBottomSheetFragment(), CategoryView {
 
     override fun getLayoutResId() = R.layout.category_list
 
+    override fun notifyTrack() {
+        // FIXME
+    }
 }

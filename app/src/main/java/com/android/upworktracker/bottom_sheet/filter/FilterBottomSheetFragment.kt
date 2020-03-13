@@ -33,6 +33,10 @@ class FilterBottomSheetFragment : BaseBottomSheetFragment(), FilterView {
         filterPresenter.clearCheckboxes()
     }
 
+    override fun notifyTrack() {
+
+    }
+
     override fun getLayoutResId() = R.layout.filter_list
 
 }

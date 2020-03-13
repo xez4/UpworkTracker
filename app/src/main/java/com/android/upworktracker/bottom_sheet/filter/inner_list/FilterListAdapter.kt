@@ -5,7 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.android.upworktracker.R
 import com.android.upworktracker.entity.Type
-import kotlinx.android.synthetic.main.checkbox_item.view.*
 import kotlinx.android.synthetic.main.radio_button_item.view.*
 
 
@@ -28,7 +27,7 @@ class FilterListAdapter(private val dataset: List<Type>) :
     override fun onBindViewHolder(holder: FilterListViewHolder, position: Int) {
         holder.bind(dataset[position])
         with(holder.itemView) {
-            radioButton.setOnClickListener{
+            radioButton.setOnClickListener {
                 dataset[checkedPosition].checkedState = false
                 notifyItemChanged(checkedPosition)
                 checkedPosition = position
